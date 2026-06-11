@@ -4,13 +4,8 @@ LLM client abstractions for WhyMatchGenerator.
 Design:
 - LLMClient is a Protocol so any backend can be injected without
   subclassing (structural typing, no base class needed).
-- GeminiLLMClient is the default production implementation (free tier).
-- OpenAILLMClient is retained as an alternative backend.
-- Tests inject a stub via the Protocol.
-
-Provider selection is controlled by LLM_PROVIDER in .env:
-  LLM_PROVIDER=gemini   → GeminiLLMClient  (default)
-  LLM_PROVIDER=openai   → OpenAILLMClient
+- OpenAILLMClient is the production implementation (GPT-4o-mini).
+- No API key configured → WhyMatchGenerator uses its deterministic fallback.
 """
 
 from typing import Protocol, runtime_checkable
@@ -26,45 +21,6 @@ class LLMClient(Protocol):
     def generate(self, prompt: str) -> str:
         """Send `prompt` to the LLM and return the text completion."""
         ...
-
-
-class GeminiLLMClient:
-    """
-    LLM client backed by Google Gemini (free tier).
-
-    Default model: gemini-2.0-flash  — free quota, fast, good quality.
-    Requires: pip install google-genai
-    API key:  https://aistudio.google.com/app/apikey  (free, no card needed)
-    """
-
-    def __init__(
-        self,
-        api_key: str,
-        model: str = "gemini-2.0-flash",
-        temperature: float = 0.0,
-    ) -> None:
-        self._model_name = model
-        self._temperature = temperature
-        self._client = self._build_client(api_key)
-
-    def generate(self, prompt: str) -> str:
-        response = self._client.models.generate_content(
-            model=self._model_name,
-            contents=prompt,
-            config={"temperature": self._temperature},
-        )
-        return response.text.strip() if response.text else ""
-
-    @staticmethod
-    def _build_client(api_key: str):
-        try:
-            from google import genai
-            return genai.Client(api_key=api_key)
-        except ImportError as exc:
-            raise ImportError(
-                "google-genai is required for GeminiLLMClient. "
-                "Install it with: pip install google-genai"
-            ) from exc
 
 
 class OpenAILLMClient:
@@ -101,6 +57,5 @@ class OpenAILLMClient:
             return openai.OpenAI(api_key=api_key)
         except ImportError as exc:
             raise ImportError(
-                "openai package is required for OpenAILLMClient. "
-                "Install it with: pip install openai"
+                "openai package is required. Install it with: pip install openai"
             ) from exc

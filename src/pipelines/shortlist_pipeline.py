@@ -115,16 +115,9 @@ class ShortlistPipeline:
             feedback_weight=settings.feedback_weight,
             # outcome_learner injected later via load_outcomes()
         )
-        # Build LLM client based on configured provider
+        # Build LLM client — OpenAI if key provided, else deterministic fallback
         llm_client = None
-        if settings.llm_provider == "gemini" and settings.gemini_api_key:
-            from ..generators.llm_client import GeminiLLMClient
-            llm_client = GeminiLLMClient(
-                api_key=settings.gemini_api_key,
-                model=settings.gemini_model,
-            )
-            logger.info("LLM provider: Gemini (%s)", settings.gemini_model)
-        elif settings.llm_provider == "openai" and settings.openai_api_key:
+        if settings.openai_api_key:
             from ..generators.llm_client import OpenAILLMClient
             llm_client = OpenAILLMClient(
                 api_key=settings.openai_api_key,
@@ -132,7 +125,7 @@ class ShortlistPipeline:
             )
             logger.info("LLM provider: OpenAI (%s)", settings.openai_model)
         else:
-            logger.info("No LLM API key configured — using deterministic fallback for why_match")
+            logger.info("No OPENAI_API_KEY configured — using deterministic fallback for why_match")
         self.generator = WhyMatchGenerator(
             llm_client=llm_client,
             top_n=settings.why_match_top_n,
