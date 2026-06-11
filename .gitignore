@@ -11,3 +11,4 @@ dist/
 build/
 sample_output/*.json
 sample_output/*.md
+# leave blank to log to stdout only
