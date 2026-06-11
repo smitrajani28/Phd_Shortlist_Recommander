@@ -41,6 +41,12 @@ class Settings(BaseSettings):
     openalex_authors_per_topic: int = Field(default=20, ge=1, le=100, description="Max unique authors to fetch per topic")
     openalex_max_topics: int = Field(default=8, ge=1, le=20, description="Max topics (base + expanded) to query")
 
+    # Concurrency
+    retrieval_max_workers: int = Field(default=8, ge=1, le=20, description="Parallel threads for OpenAlex author fetching")
+    validation_max_workers: int = Field(default=8, ge=1, le=20, description="Parallel threads for PI validation")
+    evidence_max_workers: int = Field(default=8, ge=1, le=20, description="Parallel threads for evidence collection")
+    enrichment_max_workers: int = Field(default=4, ge=1, le=10, description="Parallel threads for program linking + email extraction")
+
     # PI validation
     pi_min_confidence: float = Field(default=0.6, ge=0.0, le=1.0)
     pi_use_network: bool = Field(default=True, description="Set False to disable HTTP calls in PIValidator")

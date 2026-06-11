@@ -85,11 +85,13 @@ class OpenAlexRetriever(BaseRetriever):
         per_topic_works: int = 50,
         authors_per_topic: int = 20,
         max_topics: int = 8,
+        max_workers: int = 8,
     ) -> None:
         self.max_results = max_results
         self.per_topic_works = per_topic_works
         self.authors_per_topic = authors_per_topic
         self.max_topics = max_topics
+        self.max_workers = max_workers
         self.client = OpenAlexClient(email=email, timeout=timeout, max_retries=max_retries)
 
     # ------------------------------------------------------------------ #
@@ -106,8 +108,10 @@ class OpenAlexRetriever(BaseRetriever):
     def search_authors_by_topic(self, topic: str) -> list[Supervisor]:
         """
         Find supervisors whose recent works match a single topic keyword.
-        Fetches up to self.authors_per_topic unique authors.
+        Fetches up to self.authors_per_topic unique authors in parallel.
         """
+        from concurrent.futures import ThreadPoolExecutor, as_completed
+
         logger.info("OpenAlex: searching topic '%s'", topic)
         works = self._get_works_for_topic(topic)
 
@@ -127,11 +131,13 @@ class OpenAlexRetriever(BaseRetriever):
         author_ids = author_ids[:self.authors_per_topic]
 
         supervisors: list[Supervisor] = []
-        for aid in author_ids:
-            try:
-                supervisors.append(self.get_author_details(aid))
-            except Exception as exc:
-                logger.warning("Could not fetch author %s: %s", aid, exc)
+        with ThreadPoolExecutor(max_workers=self.max_workers) as pool:
+            futures = {pool.submit(self.get_author_details, aid): aid for aid in author_ids}
+            for future in as_completed(futures):
+                try:
+                    supervisors.append(future.result())
+                except Exception as exc:
+                    logger.warning("Could not fetch author %s: %s", futures[future], exc)
 
         logger.info(
             "OpenAlex: topic '%s' — works=%d, author_ids=%d, fetched=%d",

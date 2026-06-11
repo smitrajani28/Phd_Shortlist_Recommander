@@ -93,6 +93,7 @@ class ShortlistPipeline:
             per_topic_works=settings.openalex_per_topic,
             authors_per_topic=settings.openalex_authors_per_topic,
             max_topics=settings.openalex_max_topics,
+            max_workers=settings.retrieval_max_workers,
         )
         self.retrievers = [
             self.openalex,
@@ -108,6 +109,7 @@ class ShortlistPipeline:
             client=openalex_client,
             max_works=settings.evidence_max_works,
             recency_years=settings.evidence_recency_years,
+            max_workers=settings.evidence_max_workers,
         )
         self.scorer = RecommendationScorer(
             reach_threshold=settings.score_reach_threshold,
@@ -332,8 +334,18 @@ class ShortlistPipeline:
         """
         counts = ValidationCounts(retrieved=len(candidates))
 
-        # Gate 1: PI
-        after_pi = [s for s in candidates if self.pi_validator.validate(s)]
+        # Gate 1: PI — run in parallel
+        from concurrent.futures import ThreadPoolExecutor, as_completed
+        after_pi: list[Supervisor] = []
+        with ThreadPoolExecutor(max_workers=self.settings.validation_max_workers) as pool:
+            futures = {pool.submit(self.pi_validator.validate, s): s for s in candidates}
+            for future in as_completed(futures):
+                s = futures[future]
+                try:
+                    if future.result():
+                        after_pi.append(s)
+                except Exception as exc:
+                    logger.warning("PI validation error for %s: %s", s.name, exc)
         counts.pi_passed = len(after_pi)
         logger.info("PI rejected: %d", counts.retrieved - counts.pi_passed)
 
@@ -397,11 +409,12 @@ class ShortlistPipeline:
         self, recommendations: list[Recommendation]
     ) -> list[Recommendation]:
         """
-        Stage 8 enrichment — program linking + email extraction.
-        Best-effort: failures are caught per-recommendation so one bad
-        HTTP call never aborts the entire batch.
+        Stage 8 enrichment — program linking + email extraction, run in parallel.
+        Best-effort: failures per recommendation never abort the batch.
         """
-        for rec in recommendations:
+        from concurrent.futures import ThreadPoolExecutor, as_completed
+
+        def _enrich_one(rec: Recommendation) -> None:
             try:
                 linker_results = self.program_linker.link(rec.supervisor)
                 rec.linked_programs = [
@@ -415,16 +428,22 @@ class ShortlistPipeline:
                 ]
             except Exception as exc:
                 logger.warning("ProgramLinker failed for %s: %s", rec.supervisor.name, exc)
-
             try:
                 email_result = self.email_extractor.extract(rec.supervisor)
                 if email_result.email:
                     rec.contact_email = email_result.email
                     rec.email_source = email_result.source
-                    # Also write back to supervisor for downstream use
                     rec.supervisor.email = email_result.email
             except Exception as exc:
                 logger.warning("EmailExtractor failed for %s: %s", rec.supervisor.name, exc)
+
+        with ThreadPoolExecutor(max_workers=self.settings.enrichment_max_workers) as pool:
+            futures = [pool.submit(_enrich_one, rec) for rec in recommendations]
+            for future in as_completed(futures):
+                try:
+                    future.result()
+                except Exception as exc:
+                    logger.warning("Enrichment error: %s", exc)
 
         emails = sum(1 for r in recommendations if r.contact_email)
         links = sum(len(r.linked_programs) for r in recommendations)

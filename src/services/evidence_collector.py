@@ -47,10 +47,12 @@ class EvidenceCollector:
         client: OpenAlexClient,
         max_works: int = 10,
         recency_years: int = 5,
+        max_workers: int = 8,
     ) -> None:
         self.client = client
         self.max_works = max_works
         self.recency_years = recency_years
+        self.max_workers = max_workers
         self._cutoff_year = datetime.now().year - recency_years
 
     # ------------------------------------------------------------------ #
@@ -93,16 +95,18 @@ class EvidenceCollector:
 
     def enrich_all(self, supervisors: list[Supervisor]) -> list[Supervisor]:
         """
-        Enrich a list of supervisors in-place. Never raises.
-
-        Args:
-            supervisors: List of PI-validated supervisors.
-
-        Returns:
-            Same list with evidence fields populated where possible.
+        Enrich a list of supervisors in parallel using ThreadPoolExecutor.
+        Never raises — failures per supervisor are caught inside enrich().
         """
-        for s in supervisors:
-            self.enrich(s)
+        from concurrent.futures import ThreadPoolExecutor, as_completed
+
+        with ThreadPoolExecutor(max_workers=self.max_workers) as pool:
+            futures = {pool.submit(self.enrich, s): s for s in supervisors}
+            for future in as_completed(futures):
+                try:
+                    future.result()
+                except Exception as exc:
+                    logger.warning("enrich_all: unexpected error: %s", exc)
         return supervisors
 
     # ------------------------------------------------------------------ #

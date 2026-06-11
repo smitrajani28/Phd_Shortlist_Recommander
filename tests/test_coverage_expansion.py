@@ -94,6 +94,7 @@ class TestRetrievalDeduplication:
         r.authors_per_topic = 5
         r.max_topics = 5
         r.max_results = 50
+        r.max_workers = 2
         return r
 
     def test_duplicate_openalex_id_removed(self):
