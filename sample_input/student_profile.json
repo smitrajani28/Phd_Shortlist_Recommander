@@ -1,0 +1,19 @@
+{
+  "name": "Jane Doe",
+  "email": "jane.doe@example.com",
+  "background": {
+    "degree": "MSc",
+    "field": "Computer Science",
+    "institution": "University of Toronto",
+    "gpa": 3.9
+  },
+  "research_interests": [
+    { "topic": "natural language processing", "weight": 0.95 },
+    { "topic": "large language models", "weight": 0.90 },
+    { "topic": "retrieval-augmented generation", "weight": 0.80 },
+    { "topic": "conversational AI", "weight": 0.70 }
+  ],
+  "preferred_countries": ["US", "CA", "GB"],
+  "preferred_domains": ["NLP", "AI", "Machine Learning"],
+  "statement_of_purpose": "I am interested in improving the factual grounding of large language models through retrieval-augmented approaches, with applications in scientific question answering."
+}

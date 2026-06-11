@@ -1,0 +1,23 @@
+# Core
+pydantic>=2.7,<3
+pydantic-settings>=2.3,<3
+
+# HTTP client (for API retrievers)
+httpx>=0.27,<1
+
+# HTML parsing (for FacultyScraper)
+beautifulsoup4>=4.12,<5
+lxml>=5.2,<6
+
+# NLP / scoring
+scikit-learn>=1.5,<2          # TF-IDF vectoriser for research alignment scoring
+
+# LLM client
+openai>=1.30,<2
+
+# CLI & utilities
+python-dotenv>=1.0,<2
+
+# Testing
+pytest>=8.2,<9
+pytest-asyncio>=0.23,<1

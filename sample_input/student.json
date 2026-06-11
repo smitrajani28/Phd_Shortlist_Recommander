@@ -1,0 +1,34 @@
+{
+  "name": "Alex Kim",
+  "email": "alex.kim@example.com",
+  "background": {
+    "degree": "MSc",
+    "field": "Computer Science",
+    "institution": "University of Toronto",
+    "gpa": 3.9
+  },
+  "research_interests": [
+    { "topic": "large language models", "weight": 0.95 },
+    { "topic": "retrieval augmented generation", "weight": 0.90 },
+    { "topic": "natural language processing", "weight": 0.85 },
+    { "topic": "knowledge graphs", "weight": 0.70 }
+  ],
+  "publication_keywords": [
+    "transformer architectures",
+    "question answering",
+    "semantic search"
+  ],
+  "project_keywords": [
+    "open-domain QA",
+    "dense retrieval",
+    "fine-tuning"
+  ],
+  "skills": [
+    "PyTorch",
+    "HuggingFace",
+    "vector databases"
+  ],
+  "preferred_countries": ["US", "CA", "GB"],
+  "preferred_domains": ["NLP", "AI", "Machine Learning"],
+  "statement_of_purpose": "I aim to improve the factual grounding of large language models through retrieval-augmented methods, with a focus on scientific question answering."
+}
