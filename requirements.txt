@@ -12,8 +12,9 @@ lxml>=5.2,<6
 # NLP / scoring
 scikit-learn>=1.5,<2          # TF-IDF vectoriser for research alignment scoring
 
-# LLM client
-openai>=1.30,<2
+# LLM clients
+openai>=1.30,<2               # optional; only needed if LLM_PROVIDER=openai
+google-generativeai>=0.7,<1   # optional; only needed if LLM_PROVIDER=gemini
 
 # CLI & utilities
 python-dotenv>=1.0,<2

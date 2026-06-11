@@ -4,8 +4,13 @@ LLM client abstractions for WhyMatchGenerator.
 Design:
 - LLMClient is a Protocol so any backend can be injected without
   subclassing (structural typing, no base class needed).
-- OpenAILLMClient is the production implementation.
-- Tests inject a MockLLMClient that accepts a callable stub.
+- GeminiLLMClient is the default production implementation (free tier).
+- OpenAILLMClient is retained as an alternative backend.
+- Tests inject a stub via the Protocol.
+
+Provider selection is controlled by LLM_PROVIDER in .env:
+  LLM_PROVIDER=gemini   → GeminiLLMClient  (default)
+  LLM_PROVIDER=openai   → OpenAILLMClient
 """
 
 from typing import Protocol, runtime_checkable
@@ -16,36 +21,56 @@ logger = get_logger(__name__)
 
 @runtime_checkable
 class LLMClient(Protocol):
-    """
-    Minimal interface every LLM backend must satisfy.
-    Accepts a prompt string, returns a completion string.
-    """
+    """Minimal interface every LLM backend must satisfy."""
 
     def generate(self, prompt: str) -> str:
-        """
-        Send `prompt` to the LLM and return the text completion.
-
-        Args:
-            prompt: Fully-formatted prompt string.
-
-        Returns:
-            Generated text (may be empty string on failure).
-
-        Raises:
-            Any exception — callers must catch and fall back.
-        """
+        """Send `prompt` to the LLM and return the text completion."""
         ...
+
+
+class GeminiLLMClient:
+    """
+    LLM client backed by Google Gemini (free tier).
+
+    Default model: gemini-1.5-flash  — free quota, fast, good quality.
+    Requires: pip install google-generativeai
+    API key:  https://aistudio.google.com/app/apikey  (free, no card needed)
+    """
+
+    def __init__(
+        self,
+        api_key: str,
+        model: str = "gemini-1.5-flash",
+        temperature: float = 0.0,
+    ) -> None:
+        self._model_name = model
+        self._temperature = temperature
+        self._model = self._build_client(api_key, model)
+
+    def generate(self, prompt: str) -> str:
+        response = self._model.generate_content(
+            prompt,
+            generation_config={"temperature": self._temperature},
+        )
+        return response.text.strip() if response.text else ""
+
+    @staticmethod
+    def _build_client(api_key: str, model: str):
+        try:
+            import google.generativeai as genai
+            genai.configure(api_key=api_key)
+            return genai.GenerativeModel(model)
+        except ImportError as exc:
+            raise ImportError(
+                "google-generativeai is required for GeminiLLMClient. "
+                "Install it with: pip install google-generativeai"
+            ) from exc
 
 
 class OpenAILLMClient:
     """
-    Production LLM client backed by the OpenAI Chat Completions API.
-
-    Args:
-        api_key:     OpenAI API key (never hard-code; read from Settings).
-        model:       Model identifier, e.g. "gpt-4o-mini".
-        max_tokens:  Hard cap on completion length.
-        temperature: 0.0 for maximum determinism.
+    LLM client backed by the OpenAI Chat Completions API.
+    Requires: pip install openai
     """
 
     def __init__(
@@ -61,12 +86,6 @@ class OpenAILLMClient:
         self._client = self._build_client(api_key)
 
     def generate(self, prompt: str) -> str:
-        """
-        Call the OpenAI Chat Completions API and return the message content.
-
-        Raises:
-            openai.OpenAIError: On API or network failure.
-        """
         response = self._client.chat.completions.create(
             model=self._model,
             messages=[{"role": "user", "content": prompt}],
@@ -77,7 +96,6 @@ class OpenAILLMClient:
 
     @staticmethod
     def _build_client(api_key: str):
-        """Lazily import openai so the rest of the app works without it installed."""
         try:
             import openai
             return openai.OpenAI(api_key=api_key)

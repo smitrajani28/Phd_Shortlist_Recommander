@@ -19,6 +19,9 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
     # LLM
+    llm_provider: str = Field(default="gemini", description="LLM backend: 'gemini' or 'openai'")
+    gemini_api_key: str = Field(default="", description="Google Gemini API key")
+    gemini_model: str = Field(default="gemini-1.5-flash")
     openai_api_key: str = Field(default="", description="OpenAI API key for why_match generation")
     openai_model: str = Field(default="gpt-4o-mini")
 
