@@ -21,7 +21,7 @@ class Settings(BaseSettings):
     # LLM
     llm_provider: str = Field(default="gemini", description="LLM backend: 'gemini' or 'openai'")
     gemini_api_key: str = Field(default="", description="Google Gemini API key")
-    gemini_model: str = Field(default="gemini-1.5-flash")
+    gemini_model: str = Field(default="gemini-2.0-flash-lite")
     openai_api_key: str = Field(default="", description="OpenAI API key for why_match generation")
     openai_model: str = Field(default="gpt-4o-mini")
 

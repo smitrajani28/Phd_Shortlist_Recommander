@@ -32,38 +32,38 @@ class GeminiLLMClient:
     """
     LLM client backed by Google Gemini (free tier).
 
-    Default model: gemini-1.5-flash  — free quota, fast, good quality.
-    Requires: pip install google-generativeai
+    Default model: gemini-2.0-flash  — free quota, fast, good quality.
+    Requires: pip install google-genai
     API key:  https://aistudio.google.com/app/apikey  (free, no card needed)
     """
 
     def __init__(
         self,
         api_key: str,
-        model: str = "gemini-1.5-flash",
+        model: str = "gemini-2.0-flash",
         temperature: float = 0.0,
     ) -> None:
         self._model_name = model
         self._temperature = temperature
-        self._model = self._build_client(api_key, model)
+        self._client = self._build_client(api_key)
 
     def generate(self, prompt: str) -> str:
-        response = self._model.generate_content(
-            prompt,
-            generation_config={"temperature": self._temperature},
+        response = self._client.models.generate_content(
+            model=self._model_name,
+            contents=prompt,
+            config={"temperature": self._temperature},
         )
         return response.text.strip() if response.text else ""
 
     @staticmethod
-    def _build_client(api_key: str, model: str):
+    def _build_client(api_key: str):
         try:
-            import google.generativeai as genai
-            genai.configure(api_key=api_key)
-            return genai.GenerativeModel(model)
+            from google import genai
+            return genai.Client(api_key=api_key)
         except ImportError as exc:
             raise ImportError(
-                "google-generativeai is required for GeminiLLMClient. "
-                "Install it with: pip install google-generativeai"
+                "google-genai is required for GeminiLLMClient. "
+                "Install it with: pip install google-genai"
             ) from exc
 
 
