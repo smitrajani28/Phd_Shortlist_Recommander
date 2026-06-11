@@ -1,0 +1,1016 @@
+2026-06-11 23:39:13,169 | INFO     | src.parsers.student_parser | Loading student profile from sample_input/student.json
+2026-06-11 23:39:13,170 | INFO     | src.pipelines.shortlist_pipeline | Parsed profile for 'Alex Kim' — 13 topics
+2026-06-11 23:39:13,170 | INFO     | src.retrievers.openalex_retriever | OpenAlex: searching topic 'large language models'
+2026-06-11 23:39:15,682 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=title.search:large%20language%20models&sort=cited_by_count:desc&per-page=25&select=id,title,authorships,publication_year "HTTP/1.1 200 OK"
+2026-06-11 23:39:17,463 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5008809634 "HTTP/1.1 200 OK"
+2026-06-11 23:39:17,464 | INFO     | src.retrievers.openalex_retriever | Parsed author: Enkelejda Kasneci | Institution: Technical University of Munich | Country: DE
+2026-06-11 23:39:18,845 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5013346660 "HTTP/1.1 200 OK"
+2026-06-11 23:39:18,846 | INFO     | src.retrievers.openalex_retriever | Parsed author: Kathrin Seßler | Institution: Technical University of Munich | Country: DE
+2026-06-11 23:39:19,422 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5050063899 "HTTP/1.1 200 OK"
+2026-06-11 23:39:19,424 | INFO     | src.retrievers.openalex_retriever | Parsed author: Stefan Küchemann | Institution: LMU Klinikum | Country: DE
+2026-06-11 23:39:19,980 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5052257833 "HTTP/1.1 200 OK"
+2026-06-11 23:39:19,982 | INFO     | src.retrievers.openalex_retriever | Parsed author: Maria Bannert | Institution: Technical University of Munich | Country: DE
+2026-06-11 23:39:20,608 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5043273387 "HTTP/1.1 200 OK"
+2026-06-11 23:39:20,610 | INFO     | src.retrievers.openalex_retriever | Parsed author: Daryna Dementieva | Institution: Skolkovo Institute of Science and Technology | Country: RU
+2026-06-11 23:39:20,610 | INFO     | src.retrievers.openalex_retriever | OpenAlex: topic 'large language models' → 5 authors
+2026-06-11 23:39:20,610 | INFO     | src.retrievers.openalex_retriever | OpenAlex: searching topic 'retrieval augmented generation'
+2026-06-11 23:39:22,174 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=title.search:retrieval%20augmented%20generation&sort=cited_by_count:desc&per-page=25&select=id,title,authorships,publication_year "HTTP/1.1 200 OK"
+2026-06-11 23:39:24,036 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5102001778 "HTTP/1.1 200 OK"
+2026-06-11 23:39:24,037 | INFO     | src.retrievers.openalex_retriever | Parsed author: Yunfan Gao | Institution: Tongji University | Country: CN
+2026-06-11 23:39:24,638 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5001877137 "HTTP/1.1 200 OK"
+2026-06-11 23:39:24,639 | INFO     | src.retrievers.openalex_retriever | Parsed author: Yun Xiong | Institution: BGI Group (China) | Country: CN
+2026-06-11 23:39:25,871 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5101581913 "HTTP/1.1 200 OK"
+2026-06-11 23:39:25,873 | INFO     | src.retrievers.openalex_retriever | Parsed author: Xinyu Gao | Institution: Wenzhou University | Country: CN
+2026-06-11 23:39:27,104 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5109666673 "HTTP/1.1 200 OK"
+2026-06-11 23:39:27,105 | INFO     | src.retrievers.openalex_retriever | Parsed author: Kangxiang Jia | Institution: Fudan University | Country: CN
+2026-06-11 23:39:28,229 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5104217086 "HTTP/1.1 200 OK"
+2026-06-11 23:39:28,229 | INFO     | src.retrievers.openalex_retriever | Parsed author: Jinliu Pan | Institution: Unknown Institution | Country: N/A
+2026-06-11 23:39:28,229 | INFO     | src.retrievers.openalex_retriever | OpenAlex: topic 'retrieval augmented generation' → 5 authors
+2026-06-11 23:39:28,229 | INFO     | src.retrievers.openalex_retriever | OpenAlex: searching topic 'natural language processing'
+2026-06-11 23:39:29,829 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=title.search:natural%20language%20processing&sort=cited_by_count:desc&per-page=25&select=id,title,authorships,publication_year "HTTP/1.1 200 OK"
+2026-06-11 23:39:31,055 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5046006076 "HTTP/1.1 200 OK"
+2026-06-11 23:39:31,056 | INFO     | src.retrievers.openalex_retriever | Parsed author: Christopher D. Manning | Institution: Stanford University | Country: US
+2026-06-11 23:39:31,876 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5071144367 "HTTP/1.1 200 OK"
+2026-06-11 23:39:31,879 | INFO     | src.retrievers.openalex_retriever | Parsed author: Hinrich Schütze | Institution: University of Stuttgart | Country: DE
+2026-06-11 23:39:32,693 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5078865608 "HTTP/1.1 200 OK"
+2026-06-11 23:39:32,705 | INFO     | src.retrievers.openalex_retriever | Parsed author: Thomas Wolf | Institution: Central European University | Country: AT
+2026-06-11 23:39:33,316 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5069696966 "HTTP/1.1 200 OK"
+2026-06-11 23:39:33,317 | INFO     | src.retrievers.openalex_retriever | Parsed author: Lysandre Debut | Institution: FACE Foundation | Country: US
+2026-06-11 23:39:33,938 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5049805631 "HTTP/1.1 200 OK"
+2026-06-11 23:39:33,939 | INFO     | src.retrievers.openalex_retriever | Parsed author: Victor Sanh | Institution: Institut national de recherche en informatique et en automatique | Country: FR
+2026-06-11 23:39:33,940 | INFO     | src.retrievers.openalex_retriever | OpenAlex: topic 'natural language processing' → 5 authors
+2026-06-11 23:39:33,940 | INFO     | src.retrievers.openalex_retriever | OpenAlex: 15 unique authors across 3 topics
+2026-06-11 23:39:33,940 | INFO     | src.pipelines.shortlist_pipeline | Retrieved 15 candidates from OpenAlex
+2026-06-11 23:39:35,800 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Enkelejda+Kasneci+Technical+University+of+Munich+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:39:35,897 | INFO     | src.validators.pi_validator | Rejected: Enkelejda Kasneci (Technical University of Munich) — Reason: unable to verify faculty position
+2026-06-11 23:39:37,712 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Kathrin+Se%C3%9Fler+Technical+University+of+Munich+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:39:37,798 | INFO     | src.validators.pi_validator | Rejected: Kathrin Seßler (Technical University of Munich) — Reason: unable to verify faculty position
+2026-06-11 23:39:39,603 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Stefan+K%C3%BCchemann+LMU+Klinikum+professor+Physics&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:39:39,687 | INFO     | src.validators.pi_validator | Rejected: Stefan Küchemann (LMU Klinikum) — Reason: unable to verify faculty position
+2026-06-11 23:39:41,502 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Maria+Bannert+Technical+University+of+Munich+professor+Psychology&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:39:41,591 | INFO     | src.validators.pi_validator | Rejected: Maria Bannert (Technical University of Munich) — Reason: unable to verify faculty position
+2026-06-11 23:39:43,388 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Daryna+Dementieva+Skolkovo+Institute+of+Science+and+Technology+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:39:43,467 | INFO     | src.validators.pi_validator | Rejected: Daryna Dementieva (Skolkovo Institute of Science and Technology) — Reason: unable to verify faculty position
+2026-06-11 23:39:45,295 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Yunfan+Gao+Tongji+University+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:39:45,396 | INFO     | src.validators.pi_validator | Rejected: Yunfan Gao (Tongji University) — Reason: unable to verify faculty position
+2026-06-11 23:39:47,229 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Yun+Xiong+BGI+Group+%28China%29+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:39:47,368 | INFO     | src.validators.pi_validator | Rejected: Yun Xiong (BGI Group (China)) — Reason: unable to verify faculty position
+2026-06-11 23:39:49,167 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Xinyu+Gao+Wenzhou+University+professor+Chemistry&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:39:49,279 | INFO     | src.validators.pi_validator | Rejected: Xinyu Gao (Wenzhou University) — Reason: unable to verify faculty position
+2026-06-11 23:39:51,103 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Kangxiang+Jia+Fudan+University+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:39:51,195 | INFO     | src.validators.pi_validator | Rejected: Kangxiang Jia (Fudan University) — Reason: unable to verify faculty position
+2026-06-11 23:39:52,999 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Jinliu+Pan+Unknown+Institution+professor+Modular+design&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:39:53,097 | INFO     | src.validators.pi_validator | Rejected: Jinliu Pan (Unknown Institution) — Reason: unable to verify faculty position
+2026-06-11 23:39:54,879 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Christopher+D.+Manning+Stanford+University+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:39:54,970 | INFO     | src.validators.pi_validator | Rejected: Christopher D. Manning (Stanford University) — Reason: unable to verify faculty position
+2026-06-11 23:39:56,780 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Hinrich+Sch%C3%BCtze+University+of+Stuttgart+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:39:56,859 | INFO     | src.validators.pi_validator | Rejected: Hinrich Schütze (University of Stuttgart) — Reason: unable to verify faculty position
+2026-06-11 23:39:58,703 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Thomas+Wolf+Central+European+University+professor+Chemistry&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:39:58,810 | INFO     | src.validators.pi_validator | Rejected: Thomas Wolf (Central European University) — Reason: unable to verify faculty position
+2026-06-11 23:40:00,615 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Lysandre+Debut+FACE+Foundation+professor+Transformer&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:40:00,718 | INFO     | src.validators.pi_validator | Rejected: Lysandre Debut (FACE Foundation) — Reason: unable to verify faculty position
+2026-06-11 23:40:02,614 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Victor+Sanh+Institut+national+de+recherche+en+informatique+et+en+automatique+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:40:02,720 | INFO     | src.validators.pi_validator | Rejected: Victor Sanh (Institut national de recherche en informatique et en automatique) — Reason: unable to verify faculty position
+2026-06-11 23:40:02,720 | INFO     | src.pipelines.shortlist_pipeline | PI rejected: 15
+2026-06-11 23:40:02,721 | INFO     | src.pipelines.shortlist_pipeline | Country rejected: 0
+2026-06-11 23:40:02,721 | INFO     | src.pipelines.shortlist_pipeline | Domain rejected: 0
+2026-06-11 23:40:02,721 | INFO     | src.pipelines.shortlist_pipeline | Evidence rejected: 0
+2026-06-11 23:40:02,721 | INFO     | src.pipelines.shortlist_pipeline | Validation summary — retrieved: 15 | PI: 0 | country: 0 | domain: 0 | evidence: 0
+2026-06-11 23:40:02,721 | INFO     | src.pipelines.shortlist_pipeline | Rejections — PI: 15 | country: 0 | domain: 0 | evidence: 0
+2026-06-11 23:46:49,481 | INFO     | src.parsers.student_parser | Loading student profile from sample_input/student.json
+2026-06-11 23:46:49,481 | INFO     | src.pipelines.shortlist_pipeline | Parsed profile for 'Alex Kim' — 13 topics
+2026-06-11 23:46:49,481 | INFO     | src.retrievers.openalex_retriever | OpenAlex: searching topic 'large language models'
+2026-06-11 23:46:55,401 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=title.search:large%20language%20models&sort=cited_by_count:desc&per-page=25&select=id,title,authorships,publication_year "HTTP/1.1 200 OK"
+2026-06-11 23:46:59,127 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5008809634 "HTTP/1.1 200 OK"
+2026-06-11 23:46:59,129 | INFO     | src.retrievers.openalex_retriever | Parsed author: Enkelejda Kasneci | Institution: Technical University of Munich | Country: DE
+2026-06-11 23:47:00,351 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5013346660 "HTTP/1.1 200 OK"
+2026-06-11 23:47:00,353 | INFO     | src.retrievers.openalex_retriever | Parsed author: Kathrin Seßler | Institution: Technical University of Munich | Country: DE
+2026-06-11 23:47:00,979 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5050063899 "HTTP/1.1 200 OK"
+2026-06-11 23:47:00,981 | INFO     | src.retrievers.openalex_retriever | Parsed author: Stefan Küchemann | Institution: LMU Klinikum | Country: DE
+2026-06-11 23:47:01,682 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5052257833 "HTTP/1.1 200 OK"
+2026-06-11 23:47:01,683 | INFO     | src.retrievers.openalex_retriever | Parsed author: Maria Bannert | Institution: Technical University of Munich | Country: DE
+2026-06-11 23:47:02,515 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5043273387 "HTTP/1.1 200 OK"
+2026-06-11 23:47:02,517 | INFO     | src.retrievers.openalex_retriever | Parsed author: Daryna Dementieva | Institution: Skolkovo Institute of Science and Technology | Country: RU
+2026-06-11 23:47:02,517 | INFO     | src.retrievers.openalex_retriever | OpenAlex: topic 'large language models' → 5 authors
+2026-06-11 23:47:02,517 | INFO     | src.retrievers.openalex_retriever | OpenAlex: searching topic 'retrieval augmented generation'
+2026-06-11 23:47:07,953 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=title.search:retrieval%20augmented%20generation&sort=cited_by_count:desc&per-page=25&select=id,title,authorships,publication_year "HTTP/1.1 200 OK"
+2026-06-11 23:47:09,592 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5102001778 "HTTP/1.1 200 OK"
+2026-06-11 23:47:09,595 | INFO     | src.retrievers.openalex_retriever | Parsed author: Yunfan Gao | Institution: Tongji University | Country: CN
+2026-06-11 23:47:11,205 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5001877137 "HTTP/1.1 200 OK"
+2026-06-11 23:47:11,207 | INFO     | src.retrievers.openalex_retriever | Parsed author: Yun Xiong | Institution: BGI Group (China) | Country: CN
+2026-06-11 23:47:11,955 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5101581913 "HTTP/1.1 200 OK"
+2026-06-11 23:47:12,270 | INFO     | src.retrievers.openalex_retriever | Parsed author: Xinyu Gao | Institution: Wenzhou University | Country: CN
+2026-06-11 23:47:13,150 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5109666673 "HTTP/1.1 200 OK"
+2026-06-11 23:47:13,152 | INFO     | src.retrievers.openalex_retriever | Parsed author: Kangxiang Jia | Institution: Fudan University | Country: CN
+2026-06-11 23:47:14,402 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5104217086 "HTTP/1.1 200 OK"
+2026-06-11 23:47:14,404 | INFO     | src.retrievers.openalex_retriever | Parsed author: Jinliu Pan | Institution: Unknown Institution | Country: N/A
+2026-06-11 23:47:14,404 | INFO     | src.retrievers.openalex_retriever | OpenAlex: topic 'retrieval augmented generation' → 5 authors
+2026-06-11 23:47:14,404 | INFO     | src.retrievers.openalex_retriever | OpenAlex: searching topic 'natural language processing'
+2026-06-11 23:47:15,714 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=title.search:natural%20language%20processing&sort=cited_by_count:desc&per-page=25&select=id,title,authorships,publication_year "HTTP/1.1 200 OK"
+2026-06-11 23:47:18,252 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5046006076 "HTTP/1.1 200 OK"
+2026-06-11 23:47:18,255 | INFO     | src.retrievers.openalex_retriever | Parsed author: Christopher D. Manning | Institution: Stanford University | Country: US
+2026-06-11 23:47:18,907 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5071144367 "HTTP/1.1 200 OK"
+2026-06-11 23:47:19,138 | INFO     | src.retrievers.openalex_retriever | Parsed author: Hinrich Schütze | Institution: University of Stuttgart | Country: DE
+2026-06-11 23:47:20,137 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5078865608 "HTTP/1.1 200 OK"
+2026-06-11 23:47:20,140 | INFO     | src.retrievers.openalex_retriever | Parsed author: Thomas Wolf | Institution: Central European University | Country: AT
+2026-06-11 23:47:20,773 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5069696966 "HTTP/1.1 200 OK"
+2026-06-11 23:47:20,775 | INFO     | src.retrievers.openalex_retriever | Parsed author: Lysandre Debut | Institution: FACE Foundation | Country: US
+2026-06-11 23:47:21,592 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5049805631 "HTTP/1.1 200 OK"
+2026-06-11 23:47:21,594 | INFO     | src.retrievers.openalex_retriever | Parsed author: Victor Sanh | Institution: Institut national de recherche en informatique et en automatique | Country: FR
+2026-06-11 23:47:21,594 | INFO     | src.retrievers.openalex_retriever | OpenAlex: topic 'natural language processing' → 5 authors
+2026-06-11 23:47:21,594 | INFO     | src.retrievers.openalex_retriever | OpenAlex: 15 unique authors across 3 topics
+2026-06-11 23:47:21,594 | INFO     | src.pipelines.shortlist_pipeline | Retrieved 15 candidates from OpenAlex
+2026-06-11 23:47:23,979 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Enkelejda+Kasneci+Technical+University+of+Munich+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:47:25,001 | INFO     | src.validators.pi_validator | Accepted: Enkelejda Kasneci — Method: openalex_fallback — Reason: h_index=45, works=369, citations=12177, institution=Technical University of Munich
+2026-06-11 23:47:27,211 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Kathrin+Se%C3%9Fler+Technical+University+of+Munich+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:47:27,363 | INFO     | src.validators.pi_validator | Accepted: Kathrin Seßler — Method: openalex_fallback — Reason: h_index=10, works=16, citations=6608, institution=Technical University of Munich
+2026-06-11 23:47:30,786 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Stefan+K%C3%BCchemann+LMU+Klinikum+professor+Physics&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:47:32,526 | INFO     | src.validators.pi_validator | Accepted: Stefan Küchemann — Method: openalex_fallback — Reason: h_index=25, works=144, citations=7640, institution=LMU Klinikum
+2026-06-11 23:47:34,258 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Maria+Bannert+Technical+University+of+Munich+professor+Psychology&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:47:34,391 | INFO     | src.validators.pi_validator | Accepted: Maria Bannert — Method: openalex_fallback — Reason: h_index=40, works=138, citations=11090, institution=Technical University of Munich
+2026-06-11 23:47:37,779 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Daryna+Dementieva+Skolkovo+Institute+of+Science+and+Technology+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:47:38,397 | INFO     | src.validators.pi_validator | Accepted: Daryna Dementieva — Method: openalex_fallback — Reason: h_index=9, works=61, citations=5643, institution=Skolkovo Institute of Science and Technology
+2026-06-11 23:47:40,100 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Yunfan+Gao+Tongji+University+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:47:40,154 | INFO     | src.validators.pi_validator | Accepted: Yunfan Gao — Method: openalex_fallback — Reason: h_index=6, works=16, citations=775, institution=Tongji University
+2026-06-11 23:47:42,011 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Yun+Xiong+BGI+Group+%28China%29+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:47:43,321 | INFO     | src.validators.pi_validator | Accepted: Yun Xiong — Method: openalex_fallback — Reason: h_index=29, works=210, citations=3294, institution=BGI Group (China)
+2026-06-11 23:47:45,101 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Xinyu+Gao+Wenzhou+University+professor+Chemistry&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:47:45,193 | INFO     | src.validators.pi_validator | Accepted: Xinyu Gao — Method: openalex_fallback — Reason: h_index=16, works=56, citations=1569, institution=Wenzhou University
+2026-06-11 23:47:46,890 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Kangxiang+Jia+Fudan+University+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:47:46,955 | INFO     | src.validators.pi_validator | Accepted: Kangxiang Jia — Method: openalex_fallback — Reason: h_index=1, works=4, citations=646, institution=Fudan University
+2026-06-11 23:47:49,112 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Jinliu+Pan+Unknown+Institution+professor+Modular+design&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:47:50,887 | INFO     | src.validators.pi_validator | Rejected: Jinliu Pan (Unknown Institution) — Reason: unable to verify faculty position
+2026-06-11 23:47:52,622 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Christopher+D.+Manning+Stanford+University+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:47:52,683 | INFO     | src.validators.pi_validator | Accepted: Christopher D. Manning — Method: openalex_fallback — Reason: h_index=132, works=791, citations=165881, institution=Stanford University
+2026-06-11 23:47:54,386 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Hinrich+Sch%C3%BCtze+University+of+Stuttgart+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:47:54,513 | INFO     | src.validators.pi_validator | Accepted: Hinrich Schütze — Method: openalex_fallback — Reason: h_index=57, works=606, citations=35162, institution=University of Stuttgart
+2026-06-11 23:47:56,213 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Thomas+Wolf+Central+European+University+professor+Chemistry&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:47:56,287 | INFO     | src.validators.pi_validator | Accepted: Thomas Wolf — Method: openalex_fallback — Reason: h_index=40, works=363, citations=16842, institution=Central European University
+2026-06-11 23:47:57,990 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Lysandre+Debut+FACE+Foundation+professor+Transformer&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:47:58,050 | INFO     | src.validators.pi_validator | Accepted: Lysandre Debut — Method: openalex_fallback — Reason: h_index=5, works=23, citations=17210, institution=FACE Foundation
+2026-06-11 23:47:59,746 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Victor+Sanh+Institut+national+de+recherche+en+informatique+et+en+automatique+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:47:59,794 | INFO     | src.validators.pi_validator | Accepted: Victor Sanh — Method: openalex_fallback — Reason: h_index=20, works=54, citations=19351, institution=Institut national de recherche en informatique et en automatique
+2026-06-11 23:47:59,795 | INFO     | src.pipelines.shortlist_pipeline | PI rejected: 1
+2026-06-11 23:47:59,795 | INFO     | src.services.evidence_collector | Collecting evidence for Enkelejda Kasneci
+2026-06-11 23:48:00,911 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5008809634&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:48:01,488 | INFO     | src.services.evidence_collector | Found 5 publications for Enkelejda Kasneci
+2026-06-11 23:48:01,489 | INFO     | src.services.evidence_collector | Evidence for Enkelejda Kasneci: total_citations=6163, recent=3, latest_year=2023, concepts=39
+2026-06-11 23:48:01,489 | INFO     | src.services.evidence_collector | Collecting evidence for Kathrin Seßler
+2026-06-11 23:48:02,206 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5013346660&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:48:02,411 | INFO     | src.services.evidence_collector | Found 5 publications for Kathrin Seßler
+2026-06-11 23:48:02,411 | INFO     | src.services.evidence_collector | Evidence for Kathrin Seßler: total_citations=6468, recent=5, latest_year=2025, concepts=35
+2026-06-11 23:48:02,411 | INFO     | src.services.evidence_collector | Collecting evidence for Stefan Küchemann
+2026-06-11 23:48:03,866 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5050063899&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:48:03,868 | INFO     | src.services.evidence_collector | Found 5 publications for Stefan Küchemann
+2026-06-11 23:48:03,868 | INFO     | src.services.evidence_collector | Evidence for Stefan Küchemann: total_citations=6107, recent=3, latest_year=2023, concepts=60
+2026-06-11 23:48:03,869 | INFO     | src.services.evidence_collector | Collecting evidence for Maria Bannert
+2026-06-11 23:48:04,592 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5052257833&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:48:04,595 | INFO     | src.services.evidence_collector | Found 5 publications for Maria Bannert
+2026-06-11 23:48:04,596 | INFO     | src.services.evidence_collector | Evidence for Maria Bannert: total_citations=6973, recent=2, latest_year=2023, concepts=48
+2026-06-11 23:48:04,596 | INFO     | src.services.evidence_collector | Collecting evidence for Daryna Dementieva
+2026-06-11 23:48:05,579 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5043273387&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:48:05,822 | INFO     | src.services.evidence_collector | Found 5 publications for Daryna Dementieva
+2026-06-11 23:48:05,822 | INFO     | src.services.evidence_collector | Evidence for Daryna Dementieva: total_citations=5546, recent=5, latest_year=2023, concepts=54
+2026-06-11 23:48:05,823 | INFO     | src.services.evidence_collector | Collecting evidence for Yunfan Gao
+2026-06-11 23:48:06,620 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5102001778&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:48:06,621 | INFO     | src.services.evidence_collector | Found 5 publications for Yunfan Gao
+2026-06-11 23:48:06,621 | INFO     | src.services.evidence_collector | Evidence for Yunfan Gao: total_citations=753, recent=5, latest_year=2024, concepts=48
+2026-06-11 23:48:06,622 | INFO     | src.services.evidence_collector | Collecting evidence for Yun Xiong
+2026-06-11 23:48:07,429 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5001877137&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:48:07,431 | INFO     | src.services.evidence_collector | Found 5 publications for Yun Xiong
+2026-06-11 23:48:07,431 | INFO     | src.services.evidence_collector | Evidence for Yun Xiong: total_citations=1300, recent=2, latest_year=2023, concepts=49
+2026-06-11 23:48:07,431 | INFO     | src.services.evidence_collector | Collecting evidence for Xinyu Gao
+2026-06-11 23:48:08,348 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5101581913&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:48:08,350 | INFO     | src.services.evidence_collector | Found 5 publications for Xinyu Gao
+2026-06-11 23:48:08,351 | INFO     | src.services.evidence_collector | Evidence for Xinyu Gao: total_citations=1109, recent=5, latest_year=2025, concepts=39
+2026-06-11 23:48:08,351 | INFO     | src.services.evidence_collector | Collecting evidence for Kangxiang Jia
+2026-06-11 23:48:08,847 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5109666673&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:48:09,070 | INFO     | src.services.evidence_collector | Found 4 publications for Kangxiang Jia
+2026-06-11 23:48:09,071 | INFO     | src.services.evidence_collector | Evidence for Kangxiang Jia: total_citations=647, recent=4, latest_year=2026, concepts=46
+2026-06-11 23:48:09,071 | INFO     | src.services.evidence_collector | Collecting evidence for Christopher D. Manning
+2026-06-11 23:48:09,674 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5046006076&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:48:09,885 | INFO     | src.services.evidence_collector | Found 5 publications for Christopher D. Manning
+2026-06-11 23:48:09,886 | INFO     | src.services.evidence_collector | Evidence for Christopher D. Manning: total_citations=70379, recent=0, latest_year=2015, concepts=36
+2026-06-11 23:48:09,886 | INFO     | src.services.evidence_collector | Collecting evidence for Hinrich Schütze
+2026-06-11 23:48:10,394 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5071144367&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:48:10,713 | INFO     | src.services.evidence_collector | Found 5 publications for Hinrich Schütze
+2026-06-11 23:48:10,714 | INFO     | src.services.evidence_collector | Evidence for Hinrich Schütze: total_citations=23958, recent=0, latest_year=2017, concepts=58
+2026-06-11 23:48:10,714 | INFO     | src.services.evidence_collector | Collecting evidence for Thomas Wolf
+2026-06-11 23:48:11,314 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5078865608&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:48:11,438 | INFO     | src.services.evidence_collector | Found 5 publications for Thomas Wolf
+2026-06-11 23:48:11,438 | INFO     | src.services.evidence_collector | Evidence for Thomas Wolf: total_citations=11850, recent=0, latest_year=2020, concepts=58
+2026-06-11 23:48:11,438 | INFO     | src.services.evidence_collector | Collecting evidence for Lysandre Debut
+2026-06-11 23:48:12,205 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5069696966&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:48:12,255 | INFO     | src.services.evidence_collector | Found 5 publications for Lysandre Debut
+2026-06-11 23:48:12,255 | INFO     | src.services.evidence_collector | Evidence for Lysandre Debut: total_citations=17211, recent=1, latest_year=2021, concepts=33
+2026-06-11 23:48:12,256 | INFO     | src.services.evidence_collector | Collecting evidence for Victor Sanh
+2026-06-11 23:48:12,584 | INFO     | src.parsers.student_parser | Loading student profile from sample_input/student.json
+2026-06-11 23:48:12,584 | INFO     | src.pipelines.shortlist_pipeline | Parsed profile for 'Alex Kim' — 13 topics
+2026-06-11 23:48:12,584 | INFO     | src.retrievers.openalex_retriever | OpenAlex: searching topic 'large language models'
+2026-06-11 23:48:13,060 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5049805631&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:48:13,290 | INFO     | src.services.evidence_collector | Found 5 publications for Victor Sanh
+2026-06-11 23:48:13,290 | INFO     | src.services.evidence_collector | Evidence for Victor Sanh: total_citations=17449, recent=1, latest_year=2021, concepts=52
+2026-06-11 23:48:13,291 | INFO     | src.validators.country_validator | Rejected: Enkelejda Kasneci (Technical University of Munich) — DE not in target countries [CA, GB, US]
+2026-06-11 23:48:13,291 | INFO     | src.validators.country_validator | Rejected: Kathrin Seßler (Technical University of Munich) — DE not in target countries [CA, GB, US]
+2026-06-11 23:48:13,291 | INFO     | src.validators.country_validator | Rejected: Stefan Küchemann (LMU Klinikum) — DE not in target countries [CA, GB, US]
+2026-06-11 23:48:13,291 | INFO     | src.validators.country_validator | Rejected: Maria Bannert (Technical University of Munich) — DE not in target countries [CA, GB, US]
+2026-06-11 23:48:13,291 | INFO     | src.validators.country_validator | Rejected: Daryna Dementieva (Skolkovo Institute of Science and Technology) — RU not in target countries [CA, GB, US]
+2026-06-11 23:48:13,291 | INFO     | src.validators.country_validator | Rejected: Yunfan Gao (Tongji University) — CN not in target countries [CA, GB, US]
+2026-06-11 23:48:13,291 | INFO     | src.validators.country_validator | Rejected: Yun Xiong (BGI Group (China)) — CN not in target countries [CA, GB, US]
+2026-06-11 23:48:13,291 | INFO     | src.validators.country_validator | Rejected: Xinyu Gao (Wenzhou University) — CN not in target countries [CA, GB, US]
+2026-06-11 23:48:13,291 | INFO     | src.validators.country_validator | Rejected: Kangxiang Jia (Fudan University) — CN not in target countries [CA, GB, US]
+2026-06-11 23:48:13,291 | INFO     | src.validators.country_validator | Rejected: Hinrich Schütze (University of Stuttgart) — DE not in target countries [CA, GB, US]
+2026-06-11 23:48:13,291 | INFO     | src.validators.country_validator | Rejected: Thomas Wolf (Central European University) — AT not in target countries [CA, GB, US]
+2026-06-11 23:48:13,291 | INFO     | src.validators.country_validator | Rejected: Victor Sanh (Institut national de recherche en informatique et en automatique) — FR not in target countries [CA, GB, US]
+2026-06-11 23:48:13,291 | INFO     | src.pipelines.shortlist_pipeline | Country rejected: 12
+2026-06-11 23:48:13,291 | INFO     | src.pipelines.shortlist_pipeline | Domain rejected: 0
+2026-06-11 23:48:13,292 | INFO     | src.pipelines.shortlist_pipeline | Evidence rejected: 0
+2026-06-11 23:48:13,292 | INFO     | src.pipelines.shortlist_pipeline | Validation summary — retrieved: 15 | PI: 14 | country: 2 | domain: 2 | evidence: 2
+2026-06-11 23:48:13,292 | INFO     | src.pipelines.shortlist_pipeline | Rejections — PI: 1 | country: 12 | domain: 0 | evidence: 0
+2026-06-11 23:48:13,292 | INFO     | src.scorers.recommendation_scorer | Scored Christopher D. Manning = 0.5039
+2026-06-11 23:48:13,292 | INFO     | src.scorers.recommendation_scorer | Scored Lysandre Debut = 0.5139
+2026-06-11 23:48:13,292 | INFO     | src.scorers.recommendation_scorer | Top recommendation: Lysandre Debut (0.5139)
+2026-06-11 23:48:13,875 | INFO     | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-06-11 23:48:13,877 | WARNING  | src.generators.why_match_generator | LLM call failed for Lysandre Debut (Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-.... You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'code': 'invalid_api_key', 'param': None}, 'status': 401}) — using fallback
+2026-06-11 23:48:13,878 | INFO     | src.generators.why_match_generator | Fallback why_match used for Lysandre Debut
+2026-06-11 23:48:14,282 | INFO     | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-06-11 23:48:14,283 | WARNING  | src.generators.why_match_generator | LLM call failed for Christopher D. Manning (Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-.... You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'code': 'invalid_api_key', 'param': None}, 'status': 401}) — using fallback
+2026-06-11 23:48:14,283 | INFO     | src.generators.why_match_generator | Fallback why_match used for Christopher D. Manning
+2026-06-11 23:48:14,283 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=title.search:large%20language%20models&sort=cited_by_count:desc&per-page=25&select=id,title,authorships,publication_year "HTTP/1.1 200 OK"
+2026-06-11 23:48:15,522 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5008809634 "HTTP/1.1 200 OK"
+2026-06-11 23:48:15,524 | INFO     | src.retrievers.openalex_retriever | Parsed author: Enkelejda Kasneci | Institution: Technical University of Munich | Country: DE
+2026-06-11 23:48:16,127 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5013346660 "HTTP/1.1 200 OK"
+2026-06-11 23:48:16,128 | INFO     | src.retrievers.openalex_retriever | Parsed author: Kathrin Seßler | Institution: Technical University of Munich | Country: DE
+2026-06-11 23:48:16,754 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5050063899 "HTTP/1.1 200 OK"
+2026-06-11 23:48:16,756 | INFO     | src.retrievers.openalex_retriever | Parsed author: Stefan Küchemann | Institution: LMU Klinikum | Country: DE
+2026-06-11 23:48:17,361 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5052257833 "HTTP/1.1 200 OK"
+2026-06-11 23:48:17,362 | INFO     | src.retrievers.openalex_retriever | Parsed author: Maria Bannert | Institution: Technical University of Munich | Country: DE
+2026-06-11 23:48:17,867 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5043273387 "HTTP/1.1 200 OK"
+2026-06-11 23:48:17,869 | INFO     | src.retrievers.openalex_retriever | Parsed author: Daryna Dementieva | Institution: Skolkovo Institute of Science and Technology | Country: RU
+2026-06-11 23:48:17,870 | INFO     | src.retrievers.openalex_retriever | OpenAlex: topic 'large language models' → 5 authors
+2026-06-11 23:48:17,870 | INFO     | src.retrievers.openalex_retriever | OpenAlex: searching topic 'retrieval augmented generation'
+2026-06-11 23:48:19,307 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=title.search:retrieval%20augmented%20generation&sort=cited_by_count:desc&per-page=25&select=id,title,authorships,publication_year "HTTP/1.1 200 OK"
+2026-06-11 23:48:20,325 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5102001778 "HTTP/1.1 200 OK"
+2026-06-11 23:48:20,327 | INFO     | src.retrievers.openalex_retriever | Parsed author: Yunfan Gao | Institution: Tongji University | Country: CN
+2026-06-11 23:48:20,826 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5001877137 "HTTP/1.1 200 OK"
+2026-06-11 23:48:20,828 | INFO     | src.retrievers.openalex_retriever | Parsed author: Yun Xiong | Institution: BGI Group (China) | Country: CN
+2026-06-11 23:48:21,451 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5101581913 "HTTP/1.1 200 OK"
+2026-06-11 23:48:21,595 | INFO     | src.retrievers.openalex_retriever | Parsed author: Xinyu Gao | Institution: Wenzhou University | Country: CN
+2026-06-11 23:48:22,172 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5109666673 "HTTP/1.1 200 OK"
+2026-06-11 23:48:22,174 | INFO     | src.retrievers.openalex_retriever | Parsed author: Kangxiang Jia | Institution: Fudan University | Country: CN
+2026-06-11 23:48:22,679 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5104217086 "HTTP/1.1 200 OK"
+2026-06-11 23:48:22,681 | INFO     | src.retrievers.openalex_retriever | Parsed author: Jinliu Pan | Institution: Unknown Institution | Country: N/A
+2026-06-11 23:48:22,682 | INFO     | src.retrievers.openalex_retriever | OpenAlex: topic 'retrieval augmented generation' → 5 authors
+2026-06-11 23:48:22,682 | INFO     | src.retrievers.openalex_retriever | OpenAlex: searching topic 'natural language processing'
+2026-06-11 23:48:23,397 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=title.search:natural%20language%20processing&sort=cited_by_count:desc&per-page=25&select=id,title,authorships,publication_year "HTTP/1.1 200 OK"
+2026-06-11 23:48:24,554 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5046006076 "HTTP/1.1 200 OK"
+2026-06-11 23:48:24,831 | INFO     | src.retrievers.openalex_retriever | Parsed author: Christopher D. Manning | Institution: Stanford University | Country: US
+2026-06-11 23:48:25,468 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5071144367 "HTTP/1.1 200 OK"
+2026-06-11 23:48:25,569 | INFO     | src.retrievers.openalex_retriever | Parsed author: Hinrich Schütze | Institution: University of Stuttgart | Country: DE
+2026-06-11 23:48:26,167 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5078865608 "HTTP/1.1 200 OK"
+2026-06-11 23:48:26,316 | INFO     | src.retrievers.openalex_retriever | Parsed author: Thomas Wolf | Institution: Central European University | Country: AT
+2026-06-11 23:48:26,880 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5069696966 "HTTP/1.1 200 OK"
+2026-06-11 23:48:26,882 | INFO     | src.retrievers.openalex_retriever | Parsed author: Lysandre Debut | Institution: FACE Foundation | Country: US
+2026-06-11 23:48:27,391 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5049805631 "HTTP/1.1 200 OK"
+2026-06-11 23:48:27,393 | INFO     | src.retrievers.openalex_retriever | Parsed author: Victor Sanh | Institution: Institut national de recherche en informatique et en automatique | Country: FR
+2026-06-11 23:48:27,393 | INFO     | src.retrievers.openalex_retriever | OpenAlex: topic 'natural language processing' → 5 authors
+2026-06-11 23:48:27,393 | INFO     | src.retrievers.openalex_retriever | OpenAlex: 15 unique authors across 3 topics
+2026-06-11 23:48:27,393 | INFO     | src.pipelines.shortlist_pipeline | Retrieved 15 candidates from OpenAlex
+2026-06-11 23:48:29,178 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Enkelejda+Kasneci+Technical+University+of+Munich+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:48:29,292 | INFO     | src.validators.pi_validator | Accepted: Enkelejda Kasneci — Method: openalex_fallback — Reason: h_index=45, works=369, citations=12177, institution=Technical University of Munich
+2026-06-11 23:48:30,994 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Kathrin+Se%C3%9Fler+Technical+University+of+Munich+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:48:31,051 | INFO     | src.validators.pi_validator | Accepted: Kathrin Seßler — Method: openalex_fallback — Reason: h_index=10, works=16, citations=6608, institution=Technical University of Munich
+2026-06-11 23:48:32,748 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Stefan+K%C3%BCchemann+LMU+Klinikum+professor+Physics&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:48:32,785 | INFO     | src.validators.pi_validator | Accepted: Stefan Küchemann — Method: openalex_fallback — Reason: h_index=25, works=144, citations=7640, institution=LMU Klinikum
+2026-06-11 23:48:34,558 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Maria+Bannert+Technical+University+of+Munich+professor+Psychology&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:48:34,604 | INFO     | src.validators.pi_validator | Accepted: Maria Bannert — Method: openalex_fallback — Reason: h_index=40, works=138, citations=11090, institution=Technical University of Munich
+2026-06-11 23:48:37,028 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Daryna+Dementieva+Skolkovo+Institute+of+Science+and+Technology+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:48:39,295 | INFO     | src.validators.pi_validator | Accepted: Daryna Dementieva — Method: openalex_fallback — Reason: h_index=9, works=61, citations=5643, institution=Skolkovo Institute of Science and Technology
+2026-06-11 23:48:42,579 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Yunfan+Gao+Tongji+University+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:48:42,692 | INFO     | src.validators.pi_validator | Accepted: Yunfan Gao — Method: openalex_fallback — Reason: h_index=6, works=16, citations=775, institution=Tongji University
+2026-06-11 23:48:44,398 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Yun+Xiong+BGI+Group+%28China%29+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:48:44,959 | INFO     | src.validators.pi_validator | Accepted: Yun Xiong — Method: openalex_fallback — Reason: h_index=29, works=210, citations=3294, institution=BGI Group (China)
+2026-06-11 23:48:46,684 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Xinyu+Gao+Wenzhou+University+professor+Chemistry&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:48:46,972 | INFO     | src.validators.pi_validator | Accepted: Xinyu Gao — Method: openalex_fallback — Reason: h_index=16, works=56, citations=1569, institution=Wenzhou University
+2026-06-11 23:48:48,676 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Kangxiang+Jia+Fudan+University+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:48:48,762 | INFO     | src.validators.pi_validator | Accepted: Kangxiang Jia — Method: openalex_fallback — Reason: h_index=1, works=4, citations=646, institution=Fudan University
+2026-06-11 23:48:50,472 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Jinliu+Pan+Unknown+Institution+professor+Modular+design&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:48:50,582 | INFO     | src.validators.pi_validator | Rejected: Jinliu Pan (Unknown Institution) — Reason: unable to verify faculty position
+2026-06-11 23:48:52,389 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Christopher+D.+Manning+Stanford+University+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:48:52,436 | INFO     | src.validators.pi_validator | Accepted: Christopher D. Manning — Method: openalex_fallback — Reason: h_index=132, works=791, citations=165881, institution=Stanford University
+2026-06-11 23:48:55,463 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Hinrich+Sch%C3%BCtze+University+of+Stuttgart+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:48:55,886 | INFO     | src.validators.pi_validator | Accepted: Hinrich Schütze — Method: openalex_fallback — Reason: h_index=57, works=606, citations=35162, institution=University of Stuttgart
+2026-06-11 23:48:57,589 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Thomas+Wolf+Central+European+University+professor+Chemistry&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:48:57,635 | INFO     | src.validators.pi_validator | Accepted: Thomas Wolf — Method: openalex_fallback — Reason: h_index=40, works=363, citations=16842, institution=Central European University
+2026-06-11 23:48:59,794 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Lysandre+Debut+FACE+Foundation+professor+Transformer&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:49:01,297 | INFO     | src.validators.pi_validator | Accepted: Lysandre Debut — Method: openalex_fallback — Reason: h_index=5, works=23, citations=17210, institution=FACE Foundation
+2026-06-11 23:49:03,070 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Victor+Sanh+Institut+national+de+recherche+en+informatique+et+en+automatique+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:49:04,349 | INFO     | src.validators.pi_validator | Accepted: Victor Sanh — Method: openalex_fallback — Reason: h_index=20, works=54, citations=19351, institution=Institut national de recherche en informatique et en automatique
+2026-06-11 23:49:04,349 | INFO     | src.pipelines.shortlist_pipeline | PI rejected: 1
+2026-06-11 23:49:04,349 | INFO     | src.services.evidence_collector | Collecting evidence for Enkelejda Kasneci
+2026-06-11 23:49:06,594 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5008809634&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:49:06,829 | INFO     | src.services.evidence_collector | Found 5 publications for Enkelejda Kasneci
+2026-06-11 23:49:06,830 | INFO     | src.services.evidence_collector | Evidence for Enkelejda Kasneci: total_citations=6163, recent=3, latest_year=2023, concepts=39
+2026-06-11 23:49:06,830 | INFO     | src.services.evidence_collector | Collecting evidence for Kathrin Seßler
+2026-06-11 23:49:07,738 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5013346660&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:49:07,741 | INFO     | src.services.evidence_collector | Found 5 publications for Kathrin Seßler
+2026-06-11 23:49:07,741 | INFO     | src.services.evidence_collector | Evidence for Kathrin Seßler: total_citations=6468, recent=5, latest_year=2025, concepts=35
+2026-06-11 23:49:07,742 | INFO     | src.services.evidence_collector | Collecting evidence for Stefan Küchemann
+2026-06-11 23:49:08,364 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5050063899&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:49:08,487 | INFO     | src.services.evidence_collector | Found 5 publications for Stefan Küchemann
+2026-06-11 23:49:08,488 | INFO     | src.services.evidence_collector | Evidence for Stefan Küchemann: total_citations=6107, recent=3, latest_year=2023, concepts=60
+2026-06-11 23:49:08,488 | INFO     | src.services.evidence_collector | Collecting evidence for Maria Bannert
+2026-06-11 23:49:09,584 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5052257833&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:49:09,730 | INFO     | src.services.evidence_collector | Found 5 publications for Maria Bannert
+2026-06-11 23:49:09,731 | INFO     | src.services.evidence_collector | Evidence for Maria Bannert: total_citations=6973, recent=2, latest_year=2023, concepts=48
+2026-06-11 23:49:09,731 | INFO     | src.services.evidence_collector | Collecting evidence for Daryna Dementieva
+2026-06-11 23:49:10,300 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5043273387&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:49:10,461 | INFO     | src.services.evidence_collector | Found 5 publications for Daryna Dementieva
+2026-06-11 23:49:10,461 | INFO     | src.services.evidence_collector | Evidence for Daryna Dementieva: total_citations=5546, recent=5, latest_year=2023, concepts=54
+2026-06-11 23:49:10,462 | INFO     | src.services.evidence_collector | Collecting evidence for Yunfan Gao
+2026-06-11 23:49:11,017 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5102001778&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:49:11,322 | INFO     | src.services.evidence_collector | Found 5 publications for Yunfan Gao
+2026-06-11 23:49:11,323 | INFO     | src.services.evidence_collector | Evidence for Yunfan Gao: total_citations=753, recent=5, latest_year=2024, concepts=48
+2026-06-11 23:49:11,323 | INFO     | src.services.evidence_collector | Collecting evidence for Yun Xiong
+2026-06-11 23:49:11,946 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5001877137&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:49:12,068 | INFO     | src.services.evidence_collector | Found 5 publications for Yun Xiong
+2026-06-11 23:49:12,069 | INFO     | src.services.evidence_collector | Evidence for Yun Xiong: total_citations=1300, recent=2, latest_year=2023, concepts=49
+2026-06-11 23:49:12,069 | INFO     | src.services.evidence_collector | Collecting evidence for Xinyu Gao
+2026-06-11 23:49:12,566 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5101581913&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:49:12,796 | INFO     | src.services.evidence_collector | Found 5 publications for Xinyu Gao
+2026-06-11 23:49:12,797 | INFO     | src.services.evidence_collector | Evidence for Xinyu Gao: total_citations=1109, recent=5, latest_year=2025, concepts=39
+2026-06-11 23:49:12,797 | INFO     | src.services.evidence_collector | Collecting evidence for Kangxiang Jia
+2026-06-11 23:49:13,372 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5109666673&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:49:13,514 | INFO     | src.services.evidence_collector | Found 4 publications for Kangxiang Jia
+2026-06-11 23:49:13,515 | INFO     | src.services.evidence_collector | Evidence for Kangxiang Jia: total_citations=647, recent=4, latest_year=2026, concepts=46
+2026-06-11 23:49:13,515 | INFO     | src.services.evidence_collector | Collecting evidence for Christopher D. Manning
+2026-06-11 23:49:14,293 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5046006076&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:49:14,296 | INFO     | src.services.evidence_collector | Found 5 publications for Christopher D. Manning
+2026-06-11 23:49:14,296 | INFO     | src.services.evidence_collector | Evidence for Christopher D. Manning: total_citations=70379, recent=0, latest_year=2015, concepts=36
+2026-06-11 23:49:14,296 | INFO     | src.services.evidence_collector | Collecting evidence for Hinrich Schütze
+2026-06-11 23:49:16,032 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5071144367&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:49:16,162 | INFO     | src.services.evidence_collector | Found 5 publications for Hinrich Schütze
+2026-06-11 23:49:16,162 | INFO     | src.services.evidence_collector | Evidence for Hinrich Schütze: total_citations=23958, recent=0, latest_year=2017, concepts=58
+2026-06-11 23:49:16,162 | INFO     | src.services.evidence_collector | Collecting evidence for Thomas Wolf
+2026-06-11 23:49:16,749 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5078865608&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:49:16,895 | INFO     | src.services.evidence_collector | Found 5 publications for Thomas Wolf
+2026-06-11 23:49:16,896 | INFO     | src.services.evidence_collector | Evidence for Thomas Wolf: total_citations=11850, recent=0, latest_year=2020, concepts=58
+2026-06-11 23:49:16,896 | INFO     | src.services.evidence_collector | Collecting evidence for Lysandre Debut
+2026-06-11 23:49:17,467 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5069696966&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:49:17,662 | INFO     | src.services.evidence_collector | Found 5 publications for Lysandre Debut
+2026-06-11 23:49:17,663 | INFO     | src.services.evidence_collector | Evidence for Lysandre Debut: total_citations=17211, recent=1, latest_year=2021, concepts=33
+2026-06-11 23:49:17,663 | INFO     | src.services.evidence_collector | Collecting evidence for Victor Sanh
+2026-06-11 23:49:18,285 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5049805631&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:49:18,419 | INFO     | src.services.evidence_collector | Found 5 publications for Victor Sanh
+2026-06-11 23:49:18,420 | INFO     | src.services.evidence_collector | Evidence for Victor Sanh: total_citations=17449, recent=1, latest_year=2021, concepts=52
+2026-06-11 23:49:18,420 | INFO     | src.validators.country_validator | Rejected: Enkelejda Kasneci (Technical University of Munich) — DE not in target countries [CA, GB, US]
+2026-06-11 23:49:18,420 | INFO     | src.validators.country_validator | Rejected: Kathrin Seßler (Technical University of Munich) — DE not in target countries [CA, GB, US]
+2026-06-11 23:49:18,420 | INFO     | src.validators.country_validator | Rejected: Stefan Küchemann (LMU Klinikum) — DE not in target countries [CA, GB, US]
+2026-06-11 23:49:18,421 | INFO     | src.validators.country_validator | Rejected: Maria Bannert (Technical University of Munich) — DE not in target countries [CA, GB, US]
+2026-06-11 23:49:18,421 | INFO     | src.validators.country_validator | Rejected: Daryna Dementieva (Skolkovo Institute of Science and Technology) — RU not in target countries [CA, GB, US]
+2026-06-11 23:49:18,421 | INFO     | src.validators.country_validator | Rejected: Yunfan Gao (Tongji University) — CN not in target countries [CA, GB, US]
+2026-06-11 23:49:18,421 | INFO     | src.validators.country_validator | Rejected: Yun Xiong (BGI Group (China)) — CN not in target countries [CA, GB, US]
+2026-06-11 23:49:18,421 | INFO     | src.validators.country_validator | Rejected: Xinyu Gao (Wenzhou University) — CN not in target countries [CA, GB, US]
+2026-06-11 23:49:18,421 | INFO     | src.validators.country_validator | Rejected: Kangxiang Jia (Fudan University) — CN not in target countries [CA, GB, US]
+2026-06-11 23:49:18,421 | INFO     | src.validators.country_validator | Rejected: Hinrich Schütze (University of Stuttgart) — DE not in target countries [CA, GB, US]
+2026-06-11 23:49:18,421 | INFO     | src.validators.country_validator | Rejected: Thomas Wolf (Central European University) — AT not in target countries [CA, GB, US]
+2026-06-11 23:49:18,421 | INFO     | src.validators.country_validator | Rejected: Victor Sanh (Institut national de recherche en informatique et en automatique) — FR not in target countries [CA, GB, US]
+2026-06-11 23:49:18,421 | INFO     | src.pipelines.shortlist_pipeline | Country rejected: 12
+2026-06-11 23:49:18,422 | INFO     | src.pipelines.shortlist_pipeline | Domain rejected: 0
+2026-06-11 23:49:18,422 | INFO     | src.pipelines.shortlist_pipeline | Evidence rejected: 0
+2026-06-11 23:49:18,422 | INFO     | src.pipelines.shortlist_pipeline | Validation summary — retrieved: 15 | PI: 14 | country: 2 | domain: 2 | evidence: 2
+2026-06-11 23:49:18,422 | INFO     | src.pipelines.shortlist_pipeline | Rejections — PI: 1 | country: 12 | domain: 0 | evidence: 0
+2026-06-11 23:49:18,422 | INFO     | src.scorers.recommendation_scorer | Scored Christopher D. Manning = 0.5039
+2026-06-11 23:49:18,422 | INFO     | src.scorers.recommendation_scorer | Scored Lysandre Debut = 0.5139
+2026-06-11 23:49:18,423 | INFO     | src.scorers.recommendation_scorer | Top recommendation: Lysandre Debut (0.5139)
+2026-06-11 23:49:19,721 | INFO     | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-06-11 23:49:19,723 | WARNING  | src.generators.why_match_generator | LLM call failed for Lysandre Debut (Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-.... You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'code': 'invalid_api_key', 'param': None}, 'status': 401}) — using fallback
+2026-06-11 23:49:19,724 | INFO     | src.generators.why_match_generator | Fallback why_match used for Lysandre Debut
+2026-06-11 23:49:20,130 | INFO     | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-06-11 23:49:20,132 | WARNING  | src.generators.why_match_generator | LLM call failed for Christopher D. Manning (Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-.... You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'code': 'invalid_api_key', 'param': None}, 'status': 401}) — using fallback
+2026-06-11 23:49:20,132 | INFO     | src.generators.why_match_generator | Fallback why_match used for Christopher D. Manning
+2026-06-11 23:51:07,967 | INFO     | src.parsers.student_parser | Loading student profile from sample_input/student.json
+2026-06-11 23:51:07,967 | INFO     | src.pipelines.shortlist_pipeline | Parsed profile for 'Alex Kim' — 13 topics
+2026-06-11 23:51:07,967 | INFO     | src.retrievers.openalex_retriever | OpenAlex: searching topic 'large language models'
+2026-06-11 23:51:12,497 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=title.search:large%20language%20models&sort=cited_by_count:desc&per-page=25&select=id,title,authorships,publication_year "HTTP/1.1 200 OK"
+2026-06-11 23:51:15,252 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5008809634 "HTTP/1.1 200 OK"
+2026-06-11 23:51:15,274 | INFO     | src.retrievers.openalex_retriever | Parsed author: Enkelejda Kasneci | Institution: Technical University of Munich | Country: DE
+2026-06-11 23:51:16,683 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5013346660 "HTTP/1.1 200 OK"
+2026-06-11 23:51:16,738 | INFO     | src.retrievers.openalex_retriever | Parsed author: Kathrin Seßler | Institution: Technical University of Munich | Country: DE
+2026-06-11 23:51:17,981 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5050063899 "HTTP/1.1 200 OK"
+2026-06-11 23:51:17,983 | INFO     | src.retrievers.openalex_retriever | Parsed author: Stefan Küchemann | Institution: LMU Klinikum | Country: DE
+2026-06-11 23:51:20,598 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5052257833 "HTTP/1.1 200 OK"
+2026-06-11 23:51:21,253 | INFO     | src.retrievers.openalex_retriever | Parsed author: Maria Bannert | Institution: Technical University of Munich | Country: DE
+2026-06-11 23:51:22,224 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5043273387 "HTTP/1.1 200 OK"
+2026-06-11 23:51:22,226 | INFO     | src.retrievers.openalex_retriever | Parsed author: Daryna Dementieva | Institution: Skolkovo Institute of Science and Technology | Country: RU
+2026-06-11 23:51:22,227 | INFO     | src.retrievers.openalex_retriever | OpenAlex: topic 'large language models' → 5 authors
+2026-06-11 23:51:22,227 | INFO     | src.retrievers.openalex_retriever | OpenAlex: searching topic 'retrieval augmented generation'
+2026-06-11 23:51:25,168 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=title.search:retrieval%20augmented%20generation&sort=cited_by_count:desc&per-page=25&select=id,title,authorships,publication_year "HTTP/1.1 200 OK"
+2026-06-11 23:51:26,471 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5102001778 "HTTP/1.1 200 OK"
+2026-06-11 23:51:26,473 | INFO     | src.retrievers.openalex_retriever | Parsed author: Yunfan Gao | Institution: Tongji University | Country: CN
+2026-06-11 23:51:29,521 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5001877137 "HTTP/1.1 200 OK"
+2026-06-11 23:51:29,523 | INFO     | src.retrievers.openalex_retriever | Parsed author: Yun Xiong | Institution: BGI Group (China) | Country: CN
+2026-06-11 23:51:30,898 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5101581913 "HTTP/1.1 200 OK"
+2026-06-11 23:51:31,107 | INFO     | src.retrievers.openalex_retriever | Parsed author: Xinyu Gao | Institution: Wenzhou University | Country: CN
+2026-06-11 23:51:32,509 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5109666673 "HTTP/1.1 200 OK"
+2026-06-11 23:51:32,605 | INFO     | src.retrievers.openalex_retriever | Parsed author: Kangxiang Jia | Institution: Fudan University | Country: CN
+2026-06-11 23:51:33,386 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5104217086 "HTTP/1.1 200 OK"
+2026-06-11 23:51:33,386 | INFO     | src.retrievers.openalex_retriever | Parsed author: Jinliu Pan | Institution: Unknown Institution | Country: N/A
+2026-06-11 23:51:33,386 | INFO     | src.retrievers.openalex_retriever | OpenAlex: topic 'retrieval augmented generation' → 5 authors
+2026-06-11 23:51:33,386 | INFO     | src.retrievers.openalex_retriever | OpenAlex: searching topic 'natural language processing'
+2026-06-11 23:51:35,025 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=title.search:natural%20language%20processing&sort=cited_by_count:desc&per-page=25&select=id,title,authorships,publication_year "HTTP/1.1 200 OK"
+2026-06-11 23:51:37,059 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5046006076 "HTTP/1.1 200 OK"
+2026-06-11 23:51:37,249 | INFO     | src.retrievers.openalex_retriever | Parsed author: Christopher D. Manning | Institution: Stanford University | Country: US
+2026-06-11 23:51:38,060 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5071144367 "HTTP/1.1 200 OK"
+2026-06-11 23:51:38,063 | INFO     | src.retrievers.openalex_retriever | Parsed author: Hinrich Schütze | Institution: University of Stuttgart | Country: DE
+2026-06-11 23:51:38,585 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5078865608 "HTTP/1.1 200 OK"
+2026-06-11 23:51:39,047 | INFO     | src.retrievers.openalex_retriever | Parsed author: Thomas Wolf | Institution: Central European University | Country: AT
+2026-06-11 23:51:39,680 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5069696966 "HTTP/1.1 200 OK"
+2026-06-11 23:51:39,682 | INFO     | src.retrievers.openalex_retriever | Parsed author: Lysandre Debut | Institution: FACE Foundation | Country: US
+2026-06-11 23:51:40,312 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5049805631 "HTTP/1.1 200 OK"
+2026-06-11 23:51:40,314 | INFO     | src.retrievers.openalex_retriever | Parsed author: Victor Sanh | Institution: Institut national de recherche en informatique et en automatique | Country: FR
+2026-06-11 23:51:40,314 | INFO     | src.retrievers.openalex_retriever | OpenAlex: topic 'natural language processing' → 5 authors
+2026-06-11 23:51:40,314 | INFO     | src.retrievers.openalex_retriever | OpenAlex: 15 unique authors across 3 topics
+2026-06-11 23:51:40,314 | INFO     | src.pipelines.shortlist_pipeline | Retrieved 15 candidates from OpenAlex
+2026-06-11 23:51:42,019 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Enkelejda+Kasneci+Technical+University+of+Munich+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:51:42,118 | INFO     | src.validators.pi_validator | Accepted: Enkelejda Kasneci — Method: openalex_fallback — Reason: h_index=45, works=369, citations=12177, institution=Technical University of Munich
+2026-06-11 23:51:44,281 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Kathrin+Se%C3%9Fler+Technical+University+of+Munich+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:51:44,825 | INFO     | src.validators.pi_validator | Accepted: Kathrin Seßler — Method: openalex_fallback — Reason: h_index=10, works=16, citations=6608, institution=Technical University of Munich
+2026-06-11 23:51:47,466 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Stefan+K%C3%BCchemann+LMU+Klinikum+professor+Physics&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:51:47,556 | INFO     | src.validators.pi_validator | Accepted: Stefan Küchemann — Method: openalex_fallback — Reason: h_index=25, works=144, citations=7640, institution=LMU Klinikum
+2026-06-11 23:51:49,241 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Maria+Bannert+Technical+University+of+Munich+professor+Psychology&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:51:49,341 | INFO     | src.validators.pi_validator | Accepted: Maria Bannert — Method: openalex_fallback — Reason: h_index=40, works=138, citations=11090, institution=Technical University of Munich
+2026-06-11 23:51:51,028 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Daryna+Dementieva+Skolkovo+Institute+of+Science+and+Technology+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:51:51,085 | INFO     | src.validators.pi_validator | Accepted: Daryna Dementieva — Method: openalex_fallback — Reason: h_index=9, works=61, citations=5643, institution=Skolkovo Institute of Science and Technology
+2026-06-11 23:51:52,791 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Yunfan+Gao+Tongji+University+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:51:52,853 | INFO     | src.validators.pi_validator | Accepted: Yunfan Gao — Method: openalex_fallback — Reason: h_index=6, works=16, citations=775, institution=Tongji University
+2026-06-11 23:51:54,832 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Yun+Xiong+BGI+Group+%28China%29+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:51:56,967 | INFO     | src.validators.pi_validator | Accepted: Yun Xiong — Method: openalex_fallback — Reason: h_index=29, works=210, citations=3294, institution=BGI Group (China)
+2026-06-11 23:51:59,240 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Xinyu+Gao+Wenzhou+University+professor+Chemistry&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:51:59,365 | INFO     | src.validators.pi_validator | Accepted: Xinyu Gao — Method: openalex_fallback — Reason: h_index=16, works=56, citations=1569, institution=Wenzhou University
+2026-06-11 23:52:01,339 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Kangxiang+Jia+Fudan+University+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:52:01,975 | INFO     | src.validators.pi_validator | Accepted: Kangxiang Jia — Method: openalex_fallback — Reason: h_index=1, works=4, citations=646, institution=Fudan University
+2026-06-11 23:52:03,682 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Jinliu+Pan+Unknown+Institution+professor+Modular+design&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:52:03,800 | INFO     | src.validators.pi_validator | Rejected: Jinliu Pan (Unknown Institution) — Reason: unable to verify faculty position
+2026-06-11 23:52:05,504 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Christopher+D.+Manning+Stanford+University+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:52:05,562 | INFO     | src.validators.pi_validator | Accepted: Christopher D. Manning — Method: openalex_fallback — Reason: h_index=132, works=791, citations=165881, institution=Stanford University
+2026-06-11 23:52:07,312 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Hinrich+Sch%C3%BCtze+University+of+Stuttgart+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:52:08,202 | INFO     | src.validators.pi_validator | Accepted: Hinrich Schütze — Method: openalex_fallback — Reason: h_index=57, works=606, citations=35162, institution=University of Stuttgart
+2026-06-11 23:52:09,923 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Thomas+Wolf+Central+European+University+professor+Chemistry&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:52:09,959 | INFO     | src.validators.pi_validator | Accepted: Thomas Wolf — Method: openalex_fallback — Reason: h_index=40, works=363, citations=16842, institution=Central European University
+2026-06-11 23:52:11,667 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Lysandre+Debut+FACE+Foundation+professor+Transformer&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:52:11,705 | INFO     | src.validators.pi_validator | Accepted: Lysandre Debut — Method: openalex_fallback — Reason: h_index=5, works=23, citations=17210, institution=FACE Foundation
+2026-06-11 23:52:14,340 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Victor+Sanh+Institut+national+de+recherche+en+informatique+et+en+automatique+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-11 23:52:14,391 | INFO     | src.validators.pi_validator | Accepted: Victor Sanh — Method: openalex_fallback — Reason: h_index=20, works=54, citations=19351, institution=Institut national de recherche en informatique et en automatique
+2026-06-11 23:52:14,392 | INFO     | src.pipelines.shortlist_pipeline | PI rejected: 1
+2026-06-11 23:52:14,392 | INFO     | src.services.evidence_collector | Collecting evidence for Enkelejda Kasneci
+2026-06-11 23:52:15,346 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5008809634&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:52:15,348 | INFO     | src.services.evidence_collector | Found 5 publications for Enkelejda Kasneci
+2026-06-11 23:52:15,348 | INFO     | src.services.evidence_collector | Evidence for Enkelejda Kasneci: total_citations=6163, recent=3, latest_year=2023, concepts=39
+2026-06-11 23:52:15,349 | INFO     | src.services.evidence_collector | Collecting evidence for Kathrin Seßler
+2026-06-11 23:52:15,875 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5013346660&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:52:16,153 | INFO     | src.services.evidence_collector | Found 5 publications for Kathrin Seßler
+2026-06-11 23:52:16,155 | INFO     | src.services.evidence_collector | Evidence for Kathrin Seßler: total_citations=6468, recent=5, latest_year=2025, concepts=35
+2026-06-11 23:52:16,155 | INFO     | src.services.evidence_collector | Collecting evidence for Stefan Küchemann
+2026-06-11 23:52:16,795 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5050063899&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:52:16,991 | INFO     | src.services.evidence_collector | Found 5 publications for Stefan Küchemann
+2026-06-11 23:52:16,992 | INFO     | src.services.evidence_collector | Evidence for Stefan Küchemann: total_citations=6107, recent=3, latest_year=2023, concepts=60
+2026-06-11 23:52:16,992 | INFO     | src.services.evidence_collector | Collecting evidence for Maria Bannert
+2026-06-11 23:52:17,969 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5052257833&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:52:18,180 | INFO     | src.services.evidence_collector | Found 5 publications for Maria Bannert
+2026-06-11 23:52:18,181 | INFO     | src.services.evidence_collector | Evidence for Maria Bannert: total_citations=6973, recent=2, latest_year=2023, concepts=48
+2026-06-11 23:52:18,181 | INFO     | src.services.evidence_collector | Collecting evidence for Daryna Dementieva
+2026-06-11 23:52:19,022 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5043273387&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:52:19,092 | INFO     | src.services.evidence_collector | Found 5 publications for Daryna Dementieva
+2026-06-11 23:52:19,093 | INFO     | src.services.evidence_collector | Evidence for Daryna Dementieva: total_citations=5546, recent=5, latest_year=2023, concepts=54
+2026-06-11 23:52:19,093 | INFO     | src.services.evidence_collector | Collecting evidence for Yunfan Gao
+2026-06-11 23:52:19,942 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5102001778&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:52:19,945 | INFO     | src.services.evidence_collector | Found 5 publications for Yunfan Gao
+2026-06-11 23:52:19,945 | INFO     | src.services.evidence_collector | Evidence for Yunfan Gao: total_citations=753, recent=5, latest_year=2024, concepts=48
+2026-06-11 23:52:19,945 | INFO     | src.services.evidence_collector | Collecting evidence for Yun Xiong
+2026-06-11 23:52:20,482 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5001877137&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:52:20,716 | INFO     | src.services.evidence_collector | Found 5 publications for Yun Xiong
+2026-06-11 23:52:20,717 | INFO     | src.services.evidence_collector | Evidence for Yun Xiong: total_citations=1300, recent=2, latest_year=2023, concepts=49
+2026-06-11 23:52:20,717 | INFO     | src.services.evidence_collector | Collecting evidence for Xinyu Gao
+2026-06-11 23:52:21,274 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5101581913&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:52:21,629 | INFO     | src.services.evidence_collector | Found 5 publications for Xinyu Gao
+2026-06-11 23:52:21,630 | INFO     | src.services.evidence_collector | Evidence for Xinyu Gao: total_citations=1109, recent=5, latest_year=2025, concepts=39
+2026-06-11 23:52:21,630 | INFO     | src.services.evidence_collector | Collecting evidence for Kangxiang Jia
+2026-06-11 23:52:25,582 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5109666673&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:52:25,583 | INFO     | src.services.evidence_collector | Found 4 publications for Kangxiang Jia
+2026-06-11 23:52:25,584 | INFO     | src.services.evidence_collector | Evidence for Kangxiang Jia: total_citations=647, recent=4, latest_year=2026, concepts=46
+2026-06-11 23:52:25,584 | INFO     | src.services.evidence_collector | Collecting evidence for Christopher D. Manning
+2026-06-11 23:52:26,189 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5046006076&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:52:26,500 | INFO     | src.services.evidence_collector | Found 5 publications for Christopher D. Manning
+2026-06-11 23:52:26,501 | INFO     | src.services.evidence_collector | Evidence for Christopher D. Manning: total_citations=70379, recent=0, latest_year=2015, concepts=36
+2026-06-11 23:52:26,501 | INFO     | src.services.evidence_collector | Collecting evidence for Hinrich Schütze
+2026-06-11 23:52:27,161 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5071144367&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:52:27,431 | INFO     | src.services.evidence_collector | Found 5 publications for Hinrich Schütze
+2026-06-11 23:52:27,432 | INFO     | src.services.evidence_collector | Evidence for Hinrich Schütze: total_citations=23958, recent=0, latest_year=2017, concepts=58
+2026-06-11 23:52:27,432 | INFO     | src.services.evidence_collector | Collecting evidence for Thomas Wolf
+2026-06-11 23:52:28,475 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5078865608&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:52:28,604 | INFO     | src.services.evidence_collector | Found 5 publications for Thomas Wolf
+2026-06-11 23:52:28,604 | INFO     | src.services.evidence_collector | Evidence for Thomas Wolf: total_citations=11850, recent=0, latest_year=2020, concepts=58
+2026-06-11 23:52:28,605 | INFO     | src.services.evidence_collector | Collecting evidence for Lysandre Debut
+2026-06-11 23:52:32,605 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5069696966&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:52:32,607 | INFO     | src.services.evidence_collector | Found 5 publications for Lysandre Debut
+2026-06-11 23:52:32,608 | INFO     | src.services.evidence_collector | Evidence for Lysandre Debut: total_citations=17211, recent=1, latest_year=2021, concepts=33
+2026-06-11 23:52:32,608 | INFO     | src.services.evidence_collector | Collecting evidence for Victor Sanh
+2026-06-11 23:52:33,362 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5049805631&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-11 23:52:33,363 | INFO     | src.services.evidence_collector | Found 5 publications for Victor Sanh
+2026-06-11 23:52:33,363 | INFO     | src.services.evidence_collector | Evidence for Victor Sanh: total_citations=17449, recent=1, latest_year=2021, concepts=52
+2026-06-11 23:52:33,363 | INFO     | src.validators.country_validator | Rejected: Enkelejda Kasneci (Technical University of Munich) — DE not in target countries [CA, GB, US]
+2026-06-11 23:52:33,363 | INFO     | src.validators.country_validator | Rejected: Kathrin Seßler (Technical University of Munich) — DE not in target countries [CA, GB, US]
+2026-06-11 23:52:33,364 | INFO     | src.validators.country_validator | Rejected: Stefan Küchemann (LMU Klinikum) — DE not in target countries [CA, GB, US]
+2026-06-11 23:52:33,364 | INFO     | src.validators.country_validator | Rejected: Maria Bannert (Technical University of Munich) — DE not in target countries [CA, GB, US]
+2026-06-11 23:52:33,364 | INFO     | src.validators.country_validator | Rejected: Daryna Dementieva (Skolkovo Institute of Science and Technology) — RU not in target countries [CA, GB, US]
+2026-06-11 23:52:33,364 | INFO     | src.validators.country_validator | Rejected: Yunfan Gao (Tongji University) — CN not in target countries [CA, GB, US]
+2026-06-11 23:52:33,364 | INFO     | src.validators.country_validator | Rejected: Yun Xiong (BGI Group (China)) — CN not in target countries [CA, GB, US]
+2026-06-11 23:52:33,364 | INFO     | src.validators.country_validator | Rejected: Xinyu Gao (Wenzhou University) — CN not in target countries [CA, GB, US]
+2026-06-11 23:52:33,364 | INFO     | src.validators.country_validator | Rejected: Kangxiang Jia (Fudan University) — CN not in target countries [CA, GB, US]
+2026-06-11 23:52:33,364 | INFO     | src.validators.country_validator | Rejected: Hinrich Schütze (University of Stuttgart) — DE not in target countries [CA, GB, US]
+2026-06-11 23:52:33,364 | INFO     | src.validators.country_validator | Rejected: Thomas Wolf (Central European University) — AT not in target countries [CA, GB, US]
+2026-06-11 23:52:33,364 | INFO     | src.validators.country_validator | Rejected: Victor Sanh (Institut national de recherche en informatique et en automatique) — FR not in target countries [CA, GB, US]
+2026-06-11 23:52:33,364 | INFO     | src.pipelines.shortlist_pipeline | Country rejected: 12
+2026-06-11 23:52:33,364 | INFO     | src.pipelines.shortlist_pipeline | Domain rejected: 0
+2026-06-11 23:52:33,364 | INFO     | src.pipelines.shortlist_pipeline | Evidence rejected: 0
+2026-06-11 23:52:33,364 | INFO     | src.pipelines.shortlist_pipeline | Validation summary — retrieved: 15 | PI: 14 | country: 2 | domain: 2 | evidence: 2
+2026-06-11 23:52:33,364 | INFO     | src.pipelines.shortlist_pipeline | Rejections — PI: 1 | country: 12 | domain: 0 | evidence: 0
+2026-06-11 23:52:33,364 | INFO     | src.scorers.recommendation_scorer | Scored Christopher D. Manning = 0.5039
+2026-06-11 23:52:33,365 | INFO     | src.scorers.recommendation_scorer | Scored Lysandre Debut = 0.5139
+2026-06-11 23:52:33,365 | INFO     | src.scorers.recommendation_scorer | Top recommendation: Lysandre Debut (0.5139)
+2026-06-11 23:52:34,750 | INFO     | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-06-11 23:52:34,754 | WARNING  | src.generators.why_match_generator | LLM call failed for Lysandre Debut (Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-.... You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'code': 'invalid_api_key', 'param': None}, 'status': 401}) — using fallback
+2026-06-11 23:52:34,754 | INFO     | src.generators.why_match_generator | Fallback why_match used for Lysandre Debut
+2026-06-11 23:52:35,100 | INFO     | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-06-11 23:52:35,102 | WARNING  | src.generators.why_match_generator | LLM call failed for Christopher D. Manning (Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-.... You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'code': 'invalid_api_key', 'param': None}, 'status': 401}) — using fallback
+2026-06-11 23:52:35,102 | INFO     | src.generators.why_match_generator | Fallback why_match used for Christopher D. Manning
+2026-06-12 00:09:55,853 | INFO     | src.pipelines.shortlist_pipeline | LLM provider: Gemini (gemini-1.5-flash)
+2026-06-12 00:09:55,853 | INFO     | src.parsers.student_parser | Loading student profile from sample_input/student.json
+2026-06-12 00:09:55,854 | INFO     | src.pipelines.shortlist_pipeline | Parsed profile for 'Alex Kim' — 13 topics
+2026-06-12 00:09:55,854 | INFO     | src.retrievers.openalex_retriever | OpenAlex: searching topic 'large language models'
+2026-06-12 00:09:57,507 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=title.search:large%20language%20models&sort=cited_by_count:desc&per-page=25&select=id,title,authorships,publication_year "HTTP/1.1 200 OK"
+2026-06-12 00:09:59,636 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5008809634 "HTTP/1.1 200 OK"
+2026-06-12 00:09:59,638 | INFO     | src.retrievers.openalex_retriever | Parsed author: Enkelejda Kasneci | Institution: Technical University of Munich | Country: DE
+2026-06-12 00:10:01,981 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5013346660 "HTTP/1.1 200 OK"
+2026-06-12 00:10:01,983 | INFO     | src.retrievers.openalex_retriever | Parsed author: Kathrin Seßler | Institution: Technical University of Munich | Country: DE
+2026-06-12 00:10:06,563 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5050063899 "HTTP/1.1 200 OK"
+2026-06-12 00:10:06,591 | INFO     | src.retrievers.openalex_retriever | Parsed author: Stefan Küchemann | Institution: LMU Klinikum | Country: DE
+2026-06-12 00:10:07,969 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5052257833 "HTTP/1.1 200 OK"
+2026-06-12 00:10:07,971 | INFO     | src.retrievers.openalex_retriever | Parsed author: Maria Bannert | Institution: Technical University of Munich | Country: DE
+2026-06-12 00:10:09,904 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5043273387 "HTTP/1.1 200 OK"
+2026-06-12 00:10:09,906 | INFO     | src.retrievers.openalex_retriever | Parsed author: Daryna Dementieva | Institution: Skolkovo Institute of Science and Technology | Country: RU
+2026-06-12 00:10:09,906 | INFO     | src.retrievers.openalex_retriever | OpenAlex: topic 'large language models' → 5 authors
+2026-06-12 00:10:09,906 | INFO     | src.retrievers.openalex_retriever | OpenAlex: searching topic 'retrieval augmented generation'
+2026-06-12 00:10:11,196 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=title.search:retrieval%20augmented%20generation&sort=cited_by_count:desc&per-page=25&select=id,title,authorships,publication_year "HTTP/1.1 200 OK"
+2026-06-12 00:10:15,100 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5102001778 "HTTP/1.1 200 OK"
+2026-06-12 00:10:15,102 | INFO     | src.retrievers.openalex_retriever | Parsed author: Yunfan Gao | Institution: Tongji University | Country: CN
+2026-06-12 00:10:16,037 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5001877137 "HTTP/1.1 200 OK"
+2026-06-12 00:10:16,039 | INFO     | src.retrievers.openalex_retriever | Parsed author: Yun Xiong | Institution: BGI Group (China) | Country: CN
+2026-06-12 00:10:17,085 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5101581913 "HTTP/1.1 200 OK"
+2026-06-12 00:10:17,592 | INFO     | src.retrievers.openalex_retriever | Parsed author: Xinyu Gao | Institution: Wenzhou University | Country: CN
+2026-06-12 00:10:19,447 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5109666673 "HTTP/1.1 200 OK"
+2026-06-12 00:10:19,449 | INFO     | src.retrievers.openalex_retriever | Parsed author: Kangxiang Jia | Institution: Fudan University | Country: CN
+2026-06-12 00:10:20,255 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5104217086 "HTTP/1.1 200 OK"
+2026-06-12 00:10:20,257 | INFO     | src.retrievers.openalex_retriever | Parsed author: Jinliu Pan | Institution: Unknown Institution | Country: N/A
+2026-06-12 00:10:20,257 | INFO     | src.retrievers.openalex_retriever | OpenAlex: topic 'retrieval augmented generation' → 5 authors
+2026-06-12 00:10:20,257 | INFO     | src.retrievers.openalex_retriever | OpenAlex: searching topic 'natural language processing'
+2026-06-12 00:10:21,074 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=title.search:natural%20language%20processing&sort=cited_by_count:desc&per-page=25&select=id,title,authorships,publication_year "HTTP/1.1 200 OK"
+2026-06-12 00:10:22,607 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5046006076 "HTTP/1.1 200 OK"
+2026-06-12 00:10:23,018 | INFO     | src.retrievers.openalex_retriever | Parsed author: Christopher D. Manning | Institution: Stanford University | Country: US
+2026-06-12 00:10:24,308 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5071144367 "HTTP/1.1 200 OK"
+2026-06-12 00:10:24,312 | INFO     | src.retrievers.openalex_retriever | Parsed author: Hinrich Schütze | Institution: University of Stuttgart | Country: DE
+2026-06-12 00:10:25,023 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5078865608 "HTTP/1.1 200 OK"
+2026-06-12 00:10:25,206 | INFO     | src.retrievers.openalex_retriever | Parsed author: Thomas Wolf | Institution: Central European University | Country: AT
+2026-06-12 00:10:26,028 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5069696966 "HTTP/1.1 200 OK"
+2026-06-12 00:10:26,030 | INFO     | src.retrievers.openalex_retriever | Parsed author: Lysandre Debut | Institution: FACE Foundation | Country: US
+2026-06-12 00:10:29,168 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5049805631 "HTTP/1.1 200 OK"
+2026-06-12 00:10:29,170 | INFO     | src.retrievers.openalex_retriever | Parsed author: Victor Sanh | Institution: Institut national de recherche en informatique et en automatique | Country: FR
+2026-06-12 00:10:29,178 | INFO     | src.retrievers.openalex_retriever | OpenAlex: topic 'natural language processing' → 5 authors
+2026-06-12 00:10:29,178 | INFO     | src.retrievers.openalex_retriever | OpenAlex: 15 unique authors across 3 topics
+2026-06-12 00:10:29,179 | INFO     | src.pipelines.shortlist_pipeline | Retrieved 15 candidates from OpenAlex
+2026-06-12 00:10:31,844 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Enkelejda+Kasneci+Technical+University+of+Munich+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:10:32,430 | INFO     | src.validators.pi_validator | Accepted: Enkelejda Kasneci — Method: openalex_fallback — Reason: h_index=45, works=369, citations=12177, institution=Technical University of Munich
+2026-06-12 00:10:34,139 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Kathrin+Se%C3%9Fler+Technical+University+of+Munich+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:10:34,205 | INFO     | src.validators.pi_validator | Accepted: Kathrin Seßler — Method: openalex_fallback — Reason: h_index=10, works=16, citations=6608, institution=Technical University of Munich
+2026-06-12 00:10:37,286 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Stefan+K%C3%BCchemann+LMU+Klinikum+professor+Physics&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:10:37,433 | INFO     | src.validators.pi_validator | Accepted: Stefan Küchemann — Method: openalex_fallback — Reason: h_index=25, works=144, citations=7640, institution=LMU Klinikum
+2026-06-12 00:10:39,468 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Maria+Bannert+Technical+University+of+Munich+professor+Psychology&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:10:40,025 | INFO     | src.validators.pi_validator | Accepted: Maria Bannert — Method: openalex_fallback — Reason: h_index=40, works=138, citations=11090, institution=Technical University of Munich
+2026-06-12 00:10:42,702 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Daryna+Dementieva+Skolkovo+Institute+of+Science+and+Technology+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:10:43,877 | INFO     | src.validators.pi_validator | Accepted: Daryna Dementieva — Method: openalex_fallback — Reason: h_index=9, works=61, citations=5643, institution=Skolkovo Institute of Science and Technology
+2026-06-12 00:10:45,581 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Yunfan+Gao+Tongji+University+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:10:45,902 | INFO     | src.validators.pi_validator | Accepted: Yunfan Gao — Method: openalex_fallback — Reason: h_index=6, works=16, citations=775, institution=Tongji University
+2026-06-12 00:10:47,747 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Yun+Xiong+BGI+Group+%28China%29+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:10:48,743 | INFO     | src.validators.pi_validator | Accepted: Yun Xiong — Method: openalex_fallback — Reason: h_index=29, works=210, citations=3294, institution=BGI Group (China)
+2026-06-12 00:10:50,623 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Xinyu+Gao+Wenzhou+University+professor+Chemistry&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:10:54,220 | INFO     | src.validators.pi_validator | Accepted: Xinyu Gao — Method: openalex_fallback — Reason: h_index=16, works=56, citations=1569, institution=Wenzhou University
+2026-06-12 00:10:57,364 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Kangxiang+Jia+Fudan+University+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:10:57,532 | INFO     | src.validators.pi_validator | Accepted: Kangxiang Jia — Method: openalex_fallback — Reason: h_index=1, works=4, citations=646, institution=Fudan University
+2026-06-12 00:11:01,712 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Jinliu+Pan+Unknown+Institution+professor+Modular+design&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:11:07,070 | INFO     | src.validators.pi_validator | Rejected: Jinliu Pan (Unknown Institution) — Reason: unable to verify faculty position
+2026-06-12 00:11:09,161 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Christopher+D.+Manning+Stanford+University+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:11:09,302 | INFO     | src.validators.pi_validator | Accepted: Christopher D. Manning — Method: openalex_fallback — Reason: h_index=132, works=791, citations=165881, institution=Stanford University
+2026-06-12 00:11:11,012 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Hinrich+Sch%C3%BCtze+University+of+Stuttgart+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:11:11,079 | INFO     | src.validators.pi_validator | Accepted: Hinrich Schütze — Method: openalex_fallback — Reason: h_index=57, works=606, citations=35162, institution=University of Stuttgart
+2026-06-12 00:11:12,778 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Thomas+Wolf+Central+European+University+professor+Chemistry&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:11:12,828 | INFO     | src.validators.pi_validator | Accepted: Thomas Wolf — Method: openalex_fallback — Reason: h_index=40, works=363, citations=16842, institution=Central European University
+2026-06-12 00:11:15,535 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Lysandre+Debut+FACE+Foundation+professor+Transformer&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:11:15,931 | INFO     | src.validators.pi_validator | Accepted: Lysandre Debut — Method: openalex_fallback — Reason: h_index=5, works=23, citations=17210, institution=FACE Foundation
+2026-06-12 00:11:18,728 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Victor+Sanh+Institut+national+de+recherche+en+informatique+et+en+automatique+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:11:20,024 | INFO     | src.validators.pi_validator | Accepted: Victor Sanh — Method: openalex_fallback — Reason: h_index=20, works=54, citations=19351, institution=Institut national de recherche en informatique et en automatique
+2026-06-12 00:11:20,024 | INFO     | src.pipelines.shortlist_pipeline | PI rejected: 1
+2026-06-12 00:11:20,024 | INFO     | src.services.evidence_collector | Collecting evidence for Enkelejda Kasneci
+2026-06-12 00:11:22,050 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5008809634&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:11:22,059 | INFO     | src.services.evidence_collector | Found 5 publications for Enkelejda Kasneci
+2026-06-12 00:11:22,060 | INFO     | src.services.evidence_collector | Evidence for Enkelejda Kasneci: total_citations=6163, recent=3, latest_year=2023, concepts=39
+2026-06-12 00:11:22,060 | INFO     | src.services.evidence_collector | Collecting evidence for Kathrin Seßler
+2026-06-12 00:11:23,675 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5013346660&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:11:24,011 | INFO     | src.services.evidence_collector | Found 5 publications for Kathrin Seßler
+2026-06-12 00:11:24,011 | INFO     | src.services.evidence_collector | Evidence for Kathrin Seßler: total_citations=6468, recent=5, latest_year=2025, concepts=35
+2026-06-12 00:11:24,011 | INFO     | src.services.evidence_collector | Collecting evidence for Stefan Küchemann
+2026-06-12 00:11:25,901 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5050063899&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:11:25,907 | INFO     | src.services.evidence_collector | Found 5 publications for Stefan Küchemann
+2026-06-12 00:11:25,907 | INFO     | src.services.evidence_collector | Evidence for Stefan Küchemann: total_citations=6107, recent=3, latest_year=2023, concepts=60
+2026-06-12 00:11:25,907 | INFO     | src.services.evidence_collector | Collecting evidence for Maria Bannert
+2026-06-12 00:11:26,446 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5052257833&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:11:26,651 | INFO     | src.services.evidence_collector | Found 5 publications for Maria Bannert
+2026-06-12 00:11:26,652 | INFO     | src.services.evidence_collector | Evidence for Maria Bannert: total_citations=6973, recent=2, latest_year=2023, concepts=48
+2026-06-12 00:11:26,652 | INFO     | src.services.evidence_collector | Collecting evidence for Daryna Dementieva
+2026-06-12 00:11:28,207 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5043273387&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:11:28,209 | INFO     | src.services.evidence_collector | Found 5 publications for Daryna Dementieva
+2026-06-12 00:11:28,209 | INFO     | src.services.evidence_collector | Evidence for Daryna Dementieva: total_citations=5546, recent=5, latest_year=2023, concepts=54
+2026-06-12 00:11:28,210 | INFO     | src.services.evidence_collector | Collecting evidence for Yunfan Gao
+2026-06-12 00:11:28,834 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5102001778&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:11:28,885 | INFO     | src.services.evidence_collector | Found 5 publications for Yunfan Gao
+2026-06-12 00:11:28,885 | INFO     | src.services.evidence_collector | Evidence for Yunfan Gao: total_citations=753, recent=5, latest_year=2024, concepts=48
+2026-06-12 00:11:28,886 | INFO     | src.services.evidence_collector | Collecting evidence for Yun Xiong
+2026-06-12 00:11:29,805 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5001877137&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:11:29,918 | INFO     | src.services.evidence_collector | Found 5 publications for Yun Xiong
+2026-06-12 00:11:29,919 | INFO     | src.services.evidence_collector | Evidence for Yun Xiong: total_citations=1300, recent=2, latest_year=2023, concepts=49
+2026-06-12 00:11:29,920 | INFO     | src.services.evidence_collector | Collecting evidence for Xinyu Gao
+2026-06-12 00:11:30,986 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5101581913&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:11:30,997 | INFO     | src.services.evidence_collector | Found 5 publications for Xinyu Gao
+2026-06-12 00:11:30,998 | INFO     | src.services.evidence_collector | Evidence for Xinyu Gao: total_citations=1109, recent=5, latest_year=2025, concepts=39
+2026-06-12 00:11:30,998 | INFO     | src.services.evidence_collector | Collecting evidence for Kangxiang Jia
+2026-06-12 00:11:31,959 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5109666673&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:11:32,011 | INFO     | src.services.evidence_collector | Found 4 publications for Kangxiang Jia
+2026-06-12 00:11:32,011 | INFO     | src.services.evidence_collector | Evidence for Kangxiang Jia: total_citations=647, recent=4, latest_year=2026, concepts=46
+2026-06-12 00:11:32,012 | INFO     | src.services.evidence_collector | Collecting evidence for Christopher D. Manning
+2026-06-12 00:11:33,125 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5046006076&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:11:33,254 | INFO     | src.services.evidence_collector | Found 5 publications for Christopher D. Manning
+2026-06-12 00:11:33,255 | INFO     | src.services.evidence_collector | Evidence for Christopher D. Manning: total_citations=70379, recent=0, latest_year=2015, concepts=36
+2026-06-12 00:11:33,256 | INFO     | src.services.evidence_collector | Collecting evidence for Hinrich Schütze
+2026-06-12 00:11:34,147 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5071144367&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:11:34,160 | INFO     | src.services.evidence_collector | Found 5 publications for Hinrich Schütze
+2026-06-12 00:11:34,161 | INFO     | src.services.evidence_collector | Evidence for Hinrich Schütze: total_citations=23958, recent=0, latest_year=2017, concepts=58
+2026-06-12 00:11:34,161 | INFO     | src.services.evidence_collector | Collecting evidence for Thomas Wolf
+2026-06-12 00:11:34,672 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5078865608&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:11:35,793 | INFO     | src.services.evidence_collector | Found 5 publications for Thomas Wolf
+2026-06-12 00:11:35,794 | INFO     | src.services.evidence_collector | Evidence for Thomas Wolf: total_citations=11850, recent=0, latest_year=2020, concepts=58
+2026-06-12 00:11:35,794 | INFO     | src.services.evidence_collector | Collecting evidence for Lysandre Debut
+2026-06-12 00:11:36,819 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5069696966&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:11:36,821 | INFO     | src.services.evidence_collector | Found 5 publications for Lysandre Debut
+2026-06-12 00:11:36,822 | INFO     | src.services.evidence_collector | Evidence for Lysandre Debut: total_citations=17211, recent=1, latest_year=2021, concepts=33
+2026-06-12 00:11:36,822 | INFO     | src.services.evidence_collector | Collecting evidence for Victor Sanh
+2026-06-12 00:11:38,703 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5049805631&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:11:38,705 | INFO     | src.services.evidence_collector | Found 5 publications for Victor Sanh
+2026-06-12 00:11:38,706 | INFO     | src.services.evidence_collector | Evidence for Victor Sanh: total_citations=17449, recent=1, latest_year=2021, concepts=52
+2026-06-12 00:11:38,706 | INFO     | src.validators.country_validator | Rejected: Enkelejda Kasneci (Technical University of Munich) — DE not in target countries [CA, GB, US]
+2026-06-12 00:11:38,706 | INFO     | src.validators.country_validator | Rejected: Kathrin Seßler (Technical University of Munich) — DE not in target countries [CA, GB, US]
+2026-06-12 00:11:38,706 | INFO     | src.validators.country_validator | Rejected: Stefan Küchemann (LMU Klinikum) — DE not in target countries [CA, GB, US]
+2026-06-12 00:11:38,706 | INFO     | src.validators.country_validator | Rejected: Maria Bannert (Technical University of Munich) — DE not in target countries [CA, GB, US]
+2026-06-12 00:11:38,706 | INFO     | src.validators.country_validator | Rejected: Daryna Dementieva (Skolkovo Institute of Science and Technology) — RU not in target countries [CA, GB, US]
+2026-06-12 00:11:38,706 | INFO     | src.validators.country_validator | Rejected: Yunfan Gao (Tongji University) — CN not in target countries [CA, GB, US]
+2026-06-12 00:11:38,706 | INFO     | src.validators.country_validator | Rejected: Yun Xiong (BGI Group (China)) — CN not in target countries [CA, GB, US]
+2026-06-12 00:11:38,706 | INFO     | src.validators.country_validator | Rejected: Xinyu Gao (Wenzhou University) — CN not in target countries [CA, GB, US]
+2026-06-12 00:11:38,707 | INFO     | src.validators.country_validator | Rejected: Kangxiang Jia (Fudan University) — CN not in target countries [CA, GB, US]
+2026-06-12 00:11:38,707 | INFO     | src.validators.country_validator | Rejected: Hinrich Schütze (University of Stuttgart) — DE not in target countries [CA, GB, US]
+2026-06-12 00:11:38,707 | INFO     | src.validators.country_validator | Rejected: Thomas Wolf (Central European University) — AT not in target countries [CA, GB, US]
+2026-06-12 00:11:38,707 | INFO     | src.validators.country_validator | Rejected: Victor Sanh (Institut national de recherche en informatique et en automatique) — FR not in target countries [CA, GB, US]
+2026-06-12 00:11:38,707 | INFO     | src.pipelines.shortlist_pipeline | Country rejected: 12
+2026-06-12 00:11:38,707 | INFO     | src.pipelines.shortlist_pipeline | Domain rejected: 0
+2026-06-12 00:11:38,708 | INFO     | src.pipelines.shortlist_pipeline | Evidence rejected: 0
+2026-06-12 00:11:38,708 | INFO     | src.pipelines.shortlist_pipeline | Validation summary — retrieved: 15 | PI: 14 | country: 2 | domain: 2 | evidence: 2
+2026-06-12 00:11:38,708 | INFO     | src.pipelines.shortlist_pipeline | Rejections — PI: 1 | country: 12 | domain: 0 | evidence: 0
+2026-06-12 00:11:38,708 | INFO     | src.scorers.recommendation_scorer | Scored Christopher D. Manning = 0.5039
+2026-06-12 00:11:38,708 | INFO     | src.scorers.recommendation_scorer | Scored Lysandre Debut = 0.5139
+2026-06-12 00:11:38,708 | INFO     | src.scorers.recommendation_scorer | Top recommendation: Lysandre Debut (0.5139)
+2026-06-12 00:11:39,277 | WARNING  | src.generators.why_match_generator | LLM call failed for Lysandre Debut (404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.) — using fallback
+2026-06-12 00:11:39,278 | INFO     | src.generators.why_match_generator | Fallback why_match used for Lysandre Debut
+2026-06-12 00:11:39,577 | WARNING  | src.generators.why_match_generator | LLM call failed for Christopher D. Manning (404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.) — using fallback
+2026-06-12 00:11:39,578 | INFO     | src.generators.why_match_generator | Fallback why_match used for Christopher D. Manning
+2026-06-12 00:13:09,379 | INFO     | src.pipelines.shortlist_pipeline | LLM provider: Gemini (gemini-1.5-flash)
+2026-06-12 00:13:09,380 | INFO     | src.parsers.student_parser | Loading student profile from sample_input/student.json
+2026-06-12 00:13:09,380 | INFO     | src.pipelines.shortlist_pipeline | Parsed profile for 'Alex Kim' — 13 topics
+2026-06-12 00:13:09,380 | INFO     | src.retrievers.openalex_retriever | OpenAlex: searching topic 'large language models'
+2026-06-12 00:13:11,163 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=title.search:large%20language%20models&sort=cited_by_count:desc&per-page=25&select=id,title,authorships,publication_year "HTTP/1.1 200 OK"
+2026-06-12 00:13:13,490 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5008809634 "HTTP/1.1 200 OK"
+2026-06-12 00:13:13,493 | INFO     | src.retrievers.openalex_retriever | Parsed author: Enkelejda Kasneci | Institution: Technical University of Munich | Country: DE
+2026-06-12 00:13:15,105 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5013346660 "HTTP/1.1 200 OK"
+2026-06-12 00:13:15,117 | INFO     | src.retrievers.openalex_retriever | Parsed author: Kathrin Seßler | Institution: Technical University of Munich | Country: DE
+2026-06-12 00:13:16,255 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5050063899 "HTTP/1.1 200 OK"
+2026-06-12 00:13:16,258 | INFO     | src.retrievers.openalex_retriever | Parsed author: Stefan Küchemann | Institution: LMU Klinikum | Country: DE
+2026-06-12 00:13:17,159 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5052257833 "HTTP/1.1 200 OK"
+2026-06-12 00:13:17,161 | INFO     | src.retrievers.openalex_retriever | Parsed author: Maria Bannert | Institution: Technical University of Munich | Country: DE
+2026-06-12 00:13:17,881 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5043273387 "HTTP/1.1 200 OK"
+2026-06-12 00:13:17,884 | INFO     | src.retrievers.openalex_retriever | Parsed author: Daryna Dementieva | Institution: Skolkovo Institute of Science and Technology | Country: RU
+2026-06-12 00:13:17,884 | INFO     | src.retrievers.openalex_retriever | OpenAlex: topic 'large language models' → 5 authors
+2026-06-12 00:13:17,884 | INFO     | src.retrievers.openalex_retriever | OpenAlex: searching topic 'retrieval augmented generation'
+2026-06-12 00:13:20,378 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=title.search:retrieval%20augmented%20generation&sort=cited_by_count:desc&per-page=25&select=id,title,authorships,publication_year "HTTP/1.1 200 OK"
+2026-06-12 00:13:24,862 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5102001778 "HTTP/1.1 200 OK"
+2026-06-12 00:13:24,864 | INFO     | src.retrievers.openalex_retriever | Parsed author: Yunfan Gao | Institution: Tongji University | Country: CN
+2026-06-12 00:13:26,808 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5001877137 "HTTP/1.1 200 OK"
+2026-06-12 00:13:26,818 | INFO     | src.retrievers.openalex_retriever | Parsed author: Yun Xiong | Institution: BGI Group (China) | Country: CN
+2026-06-12 00:13:28,102 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5101581913 "HTTP/1.1 200 OK"
+2026-06-12 00:13:28,295 | INFO     | src.retrievers.openalex_retriever | Parsed author: Xinyu Gao | Institution: Wenzhou University | Country: CN
+2026-06-12 00:13:28,992 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5109666673 "HTTP/1.1 200 OK"
+2026-06-12 00:13:28,994 | INFO     | src.retrievers.openalex_retriever | Parsed author: Kangxiang Jia | Institution: Fudan University | Country: CN
+2026-06-12 00:13:29,549 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5104217086 "HTTP/1.1 200 OK"
+2026-06-12 00:13:29,551 | INFO     | src.retrievers.openalex_retriever | Parsed author: Jinliu Pan | Institution: Unknown Institution | Country: N/A
+2026-06-12 00:13:29,551 | INFO     | src.retrievers.openalex_retriever | OpenAlex: topic 'retrieval augmented generation' → 5 authors
+2026-06-12 00:13:29,552 | INFO     | src.retrievers.openalex_retriever | OpenAlex: searching topic 'natural language processing'
+2026-06-12 00:13:31,455 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=title.search:natural%20language%20processing&sort=cited_by_count:desc&per-page=25&select=id,title,authorships,publication_year "HTTP/1.1 200 OK"
+2026-06-12 00:13:32,166 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5046006076 "HTTP/1.1 200 OK"
+2026-06-12 00:13:32,168 | INFO     | src.retrievers.openalex_retriever | Parsed author: Christopher D. Manning | Institution: Stanford University | Country: US
+2026-06-12 00:13:32,736 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5071144367 "HTTP/1.1 200 OK"
+2026-06-12 00:13:32,865 | INFO     | src.retrievers.openalex_retriever | Parsed author: Hinrich Schütze | Institution: University of Stuttgart | Country: DE
+2026-06-12 00:13:33,949 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5078865608 "HTTP/1.1 200 OK"
+2026-06-12 00:13:33,975 | INFO     | src.retrievers.openalex_retriever | Parsed author: Thomas Wolf | Institution: Central European University | Country: AT
+2026-06-12 00:13:34,462 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5069696966 "HTTP/1.1 200 OK"
+2026-06-12 00:13:34,464 | INFO     | src.retrievers.openalex_retriever | Parsed author: Lysandre Debut | Institution: FACE Foundation | Country: US
+2026-06-12 00:13:34,975 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5049805631 "HTTP/1.1 200 OK"
+2026-06-12 00:13:34,977 | INFO     | src.retrievers.openalex_retriever | Parsed author: Victor Sanh | Institution: Institut national de recherche en informatique et en automatique | Country: FR
+2026-06-12 00:13:34,983 | INFO     | src.retrievers.openalex_retriever | OpenAlex: topic 'natural language processing' → 5 authors
+2026-06-12 00:13:34,983 | INFO     | src.retrievers.openalex_retriever | OpenAlex: 15 unique authors across 3 topics
+2026-06-12 00:13:34,983 | INFO     | src.pipelines.shortlist_pipeline | Retrieved 15 candidates from OpenAlex
+2026-06-12 00:13:36,694 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Enkelejda+Kasneci+Technical+University+of+Munich+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:13:36,794 | INFO     | src.validators.pi_validator | Accepted: Enkelejda Kasneci — Method: openalex_fallback — Reason: h_index=45, works=369, citations=12177, institution=Technical University of Munich
+2026-06-12 00:13:38,487 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Kathrin+Se%C3%9Fler+Technical+University+of+Munich+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:13:38,550 | INFO     | src.validators.pi_validator | Accepted: Kathrin Seßler — Method: openalex_fallback — Reason: h_index=10, works=16, citations=6608, institution=Technical University of Munich
+2026-06-12 00:13:40,251 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Stefan+K%C3%BCchemann+LMU+Klinikum+professor+Physics&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:13:40,281 | INFO     | src.validators.pi_validator | Accepted: Stefan Küchemann — Method: openalex_fallback — Reason: h_index=25, works=144, citations=7640, institution=LMU Klinikum
+2026-06-12 00:13:42,056 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Maria+Bannert+Technical+University+of+Munich+professor+Psychology&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:13:42,101 | INFO     | src.validators.pi_validator | Accepted: Maria Bannert — Method: openalex_fallback — Reason: h_index=40, works=138, citations=11090, institution=Technical University of Munich
+2026-06-12 00:13:44,228 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Daryna+Dementieva+Skolkovo+Institute+of+Science+and+Technology+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:13:44,794 | INFO     | src.validators.pi_validator | Accepted: Daryna Dementieva — Method: openalex_fallback — Reason: h_index=9, works=61, citations=5643, institution=Skolkovo Institute of Science and Technology
+2026-06-12 00:13:46,740 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Yunfan+Gao+Tongji+University+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:13:46,809 | INFO     | src.validators.pi_validator | Accepted: Yunfan Gao — Method: openalex_fallback — Reason: h_index=6, works=16, citations=775, institution=Tongji University
+2026-06-12 00:13:48,880 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Yun+Xiong+BGI+Group+%28China%29+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:13:50,612 | INFO     | src.validators.pi_validator | Accepted: Yun Xiong — Method: openalex_fallback — Reason: h_index=29, works=210, citations=3294, institution=BGI Group (China)
+2026-06-12 00:13:52,359 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Xinyu+Gao+Wenzhou+University+professor+Chemistry&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:14:00,485 | INFO     | src.validators.pi_validator | Accepted: Xinyu Gao — Method: openalex_fallback — Reason: h_index=16, works=56, citations=1569, institution=Wenzhou University
+2026-06-12 00:14:02,237 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Kangxiang+Jia+Fudan+University+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:14:02,346 | INFO     | src.validators.pi_validator | Accepted: Kangxiang Jia — Method: openalex_fallback — Reason: h_index=1, works=4, citations=646, institution=Fudan University
+2026-06-12 00:14:04,140 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Jinliu+Pan+Unknown+Institution+professor+Modular+design&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:14:04,601 | INFO     | src.validators.pi_validator | Rejected: Jinliu Pan (Unknown Institution) — Reason: unable to verify faculty position
+2026-06-12 00:14:06,293 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Christopher+D.+Manning+Stanford+University+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:14:06,321 | INFO     | src.validators.pi_validator | Accepted: Christopher D. Manning — Method: openalex_fallback — Reason: h_index=132, works=791, citations=165881, institution=Stanford University
+2026-06-12 00:14:08,015 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Hinrich+Sch%C3%BCtze+University+of+Stuttgart+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:14:08,077 | INFO     | src.validators.pi_validator | Accepted: Hinrich Schütze — Method: openalex_fallback — Reason: h_index=57, works=606, citations=35162, institution=University of Stuttgart
+2026-06-12 00:14:09,880 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Thomas+Wolf+Central+European+University+professor+Chemistry&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:14:10,065 | INFO     | src.validators.pi_validator | Accepted: Thomas Wolf — Method: openalex_fallback — Reason: h_index=40, works=363, citations=16842, institution=Central European University
+2026-06-12 00:14:11,920 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Lysandre+Debut+FACE+Foundation+professor+Transformer&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:14:11,985 | INFO     | src.validators.pi_validator | Accepted: Lysandre Debut — Method: openalex_fallback — Reason: h_index=5, works=23, citations=17210, institution=FACE Foundation
+2026-06-12 00:14:13,890 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Victor+Sanh+Institut+national+de+recherche+en+informatique+et+en+automatique+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:14:14,003 | INFO     | src.validators.pi_validator | Accepted: Victor Sanh — Method: openalex_fallback — Reason: h_index=20, works=54, citations=19351, institution=Institut national de recherche en informatique et en automatique
+2026-06-12 00:14:14,004 | INFO     | src.pipelines.shortlist_pipeline | PI rejected: 1
+2026-06-12 00:14:14,004 | INFO     | src.services.evidence_collector | Collecting evidence for Enkelejda Kasneci
+2026-06-12 00:14:14,808 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5008809634&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:14:14,943 | INFO     | src.services.evidence_collector | Found 5 publications for Enkelejda Kasneci
+2026-06-12 00:14:14,944 | INFO     | src.services.evidence_collector | Evidence for Enkelejda Kasneci: total_citations=6163, recent=3, latest_year=2023, concepts=39
+2026-06-12 00:14:14,944 | INFO     | src.services.evidence_collector | Collecting evidence for Kathrin Seßler
+2026-06-12 00:14:15,730 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5013346660&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:14:15,732 | INFO     | src.services.evidence_collector | Found 5 publications for Kathrin Seßler
+2026-06-12 00:14:15,733 | INFO     | src.services.evidence_collector | Evidence for Kathrin Seßler: total_citations=6468, recent=5, latest_year=2025, concepts=35
+2026-06-12 00:14:15,733 | INFO     | src.services.evidence_collector | Collecting evidence for Stefan Küchemann
+2026-06-12 00:14:16,549 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5050063899&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:14:16,549 | INFO     | src.services.evidence_collector | Found 5 publications for Stefan Küchemann
+2026-06-12 00:14:16,550 | INFO     | src.services.evidence_collector | Evidence for Stefan Küchemann: total_citations=6107, recent=3, latest_year=2023, concepts=60
+2026-06-12 00:14:16,550 | INFO     | src.services.evidence_collector | Collecting evidence for Maria Bannert
+2026-06-12 00:14:17,230 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5052257833&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:14:17,233 | INFO     | src.services.evidence_collector | Found 5 publications for Maria Bannert
+2026-06-12 00:14:17,233 | INFO     | src.services.evidence_collector | Evidence for Maria Bannert: total_citations=6973, recent=2, latest_year=2023, concepts=48
+2026-06-12 00:14:17,233 | INFO     | src.services.evidence_collector | Collecting evidence for Daryna Dementieva
+2026-06-12 00:14:17,982 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5043273387&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:14:17,985 | INFO     | src.services.evidence_collector | Found 5 publications for Daryna Dementieva
+2026-06-12 00:14:17,985 | INFO     | src.services.evidence_collector | Evidence for Daryna Dementieva: total_citations=5546, recent=5, latest_year=2023, concepts=54
+2026-06-12 00:14:17,985 | INFO     | src.services.evidence_collector | Collecting evidence for Yunfan Gao
+2026-06-12 00:14:18,597 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5102001778&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:14:18,666 | INFO     | src.services.evidence_collector | Found 5 publications for Yunfan Gao
+2026-06-12 00:14:18,666 | INFO     | src.services.evidence_collector | Evidence for Yunfan Gao: total_citations=753, recent=5, latest_year=2024, concepts=48
+2026-06-12 00:14:18,667 | INFO     | src.services.evidence_collector | Collecting evidence for Yun Xiong
+2026-06-12 00:14:19,428 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5001877137&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:14:19,430 | INFO     | src.services.evidence_collector | Found 5 publications for Yun Xiong
+2026-06-12 00:14:19,430 | INFO     | src.services.evidence_collector | Evidence for Yun Xiong: total_citations=1300, recent=2, latest_year=2023, concepts=49
+2026-06-12 00:14:19,430 | INFO     | src.services.evidence_collector | Collecting evidence for Xinyu Gao
+2026-06-12 00:14:20,857 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5101581913&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:14:20,859 | INFO     | src.services.evidence_collector | Found 5 publications for Xinyu Gao
+2026-06-12 00:14:20,859 | INFO     | src.services.evidence_collector | Evidence for Xinyu Gao: total_citations=1109, recent=5, latest_year=2025, concepts=39
+2026-06-12 00:14:20,859 | INFO     | src.services.evidence_collector | Collecting evidence for Kangxiang Jia
+2026-06-12 00:14:22,012 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5109666673&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:14:22,014 | INFO     | src.services.evidence_collector | Found 4 publications for Kangxiang Jia
+2026-06-12 00:14:22,014 | INFO     | src.services.evidence_collector | Evidence for Kangxiang Jia: total_citations=647, recent=4, latest_year=2026, concepts=46
+2026-06-12 00:14:22,014 | INFO     | src.services.evidence_collector | Collecting evidence for Christopher D. Manning
+2026-06-12 00:14:22,591 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5046006076&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:14:22,729 | INFO     | src.services.evidence_collector | Found 5 publications for Christopher D. Manning
+2026-06-12 00:14:22,730 | INFO     | src.services.evidence_collector | Evidence for Christopher D. Manning: total_citations=70379, recent=0, latest_year=2015, concepts=36
+2026-06-12 00:14:22,731 | INFO     | src.services.evidence_collector | Collecting evidence for Hinrich Schütze
+2026-06-12 00:14:23,287 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5071144367&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:14:23,500 | INFO     | src.services.evidence_collector | Found 5 publications for Hinrich Schütze
+2026-06-12 00:14:23,500 | INFO     | src.services.evidence_collector | Evidence for Hinrich Schütze: total_citations=23958, recent=0, latest_year=2017, concepts=58
+2026-06-12 00:14:23,500 | INFO     | src.services.evidence_collector | Collecting evidence for Thomas Wolf
+2026-06-12 00:14:24,024 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5078865608&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:14:24,192 | INFO     | src.services.evidence_collector | Found 5 publications for Thomas Wolf
+2026-06-12 00:14:24,193 | INFO     | src.services.evidence_collector | Evidence for Thomas Wolf: total_citations=11850, recent=0, latest_year=2020, concepts=58
+2026-06-12 00:14:24,193 | INFO     | src.services.evidence_collector | Collecting evidence for Lysandre Debut
+2026-06-12 00:14:24,948 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5069696966&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:14:24,950 | INFO     | src.services.evidence_collector | Found 5 publications for Lysandre Debut
+2026-06-12 00:14:24,951 | INFO     | src.services.evidence_collector | Evidence for Lysandre Debut: total_citations=17211, recent=1, latest_year=2021, concepts=33
+2026-06-12 00:14:24,951 | INFO     | src.services.evidence_collector | Collecting evidence for Victor Sanh
+2026-06-12 00:14:25,459 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5049805631&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:14:25,628 | INFO     | src.services.evidence_collector | Found 5 publications for Victor Sanh
+2026-06-12 00:14:25,629 | INFO     | src.services.evidence_collector | Evidence for Victor Sanh: total_citations=17449, recent=1, latest_year=2021, concepts=52
+2026-06-12 00:14:25,629 | INFO     | src.validators.country_validator | Rejected: Enkelejda Kasneci (Technical University of Munich) — DE not in target countries [CA, GB, US]
+2026-06-12 00:14:25,629 | INFO     | src.validators.country_validator | Rejected: Kathrin Seßler (Technical University of Munich) — DE not in target countries [CA, GB, US]
+2026-06-12 00:14:25,629 | INFO     | src.validators.country_validator | Rejected: Stefan Küchemann (LMU Klinikum) — DE not in target countries [CA, GB, US]
+2026-06-12 00:14:25,629 | INFO     | src.validators.country_validator | Rejected: Maria Bannert (Technical University of Munich) — DE not in target countries [CA, GB, US]
+2026-06-12 00:14:25,630 | INFO     | src.validators.country_validator | Rejected: Daryna Dementieva (Skolkovo Institute of Science and Technology) — RU not in target countries [CA, GB, US]
+2026-06-12 00:14:25,630 | INFO     | src.validators.country_validator | Rejected: Yunfan Gao (Tongji University) — CN not in target countries [CA, GB, US]
+2026-06-12 00:14:25,630 | INFO     | src.validators.country_validator | Rejected: Yun Xiong (BGI Group (China)) — CN not in target countries [CA, GB, US]
+2026-06-12 00:14:25,630 | INFO     | src.validators.country_validator | Rejected: Xinyu Gao (Wenzhou University) — CN not in target countries [CA, GB, US]
+2026-06-12 00:14:25,630 | INFO     | src.validators.country_validator | Rejected: Kangxiang Jia (Fudan University) — CN not in target countries [CA, GB, US]
+2026-06-12 00:14:25,630 | INFO     | src.validators.country_validator | Rejected: Hinrich Schütze (University of Stuttgart) — DE not in target countries [CA, GB, US]
+2026-06-12 00:14:25,630 | INFO     | src.validators.country_validator | Rejected: Thomas Wolf (Central European University) — AT not in target countries [CA, GB, US]
+2026-06-12 00:14:25,630 | INFO     | src.validators.country_validator | Rejected: Victor Sanh (Institut national de recherche en informatique et en automatique) — FR not in target countries [CA, GB, US]
+2026-06-12 00:14:25,630 | INFO     | src.pipelines.shortlist_pipeline | Country rejected: 12
+2026-06-12 00:14:25,631 | INFO     | src.pipelines.shortlist_pipeline | Domain rejected: 0
+2026-06-12 00:14:25,631 | INFO     | src.pipelines.shortlist_pipeline | Evidence rejected: 0
+2026-06-12 00:14:25,631 | INFO     | src.pipelines.shortlist_pipeline | Validation summary — retrieved: 15 | PI: 14 | country: 2 | domain: 2 | evidence: 2
+2026-06-12 00:14:25,631 | INFO     | src.pipelines.shortlist_pipeline | Rejections — PI: 1 | country: 12 | domain: 0 | evidence: 0
+2026-06-12 00:14:25,631 | INFO     | src.scorers.recommendation_scorer | Scored Christopher D. Manning = 0.5039
+2026-06-12 00:14:25,631 | INFO     | src.scorers.recommendation_scorer | Scored Lysandre Debut = 0.5139
+2026-06-12 00:14:25,632 | INFO     | src.scorers.recommendation_scorer | Top recommendation: Lysandre Debut (0.5139)
+2026-06-12 00:14:25,869 | WARNING  | src.generators.why_match_generator | LLM call failed for Lysandre Debut (404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.) — using fallback
+2026-06-12 00:14:25,870 | INFO     | src.generators.why_match_generator | Fallback why_match used for Lysandre Debut
+2026-06-12 00:14:25,993 | WARNING  | src.generators.why_match_generator | LLM call failed for Christopher D. Manning (404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.) — using fallback
+2026-06-12 00:14:25,994 | INFO     | src.generators.why_match_generator | Fallback why_match used for Christopher D. Manning
+2026-06-12 00:22:14,583 | INFO     | src.pipelines.shortlist_pipeline | LLM provider: Gemini (gemini-2.0-flash-lite)
+2026-06-12 00:22:14,584 | INFO     | src.parsers.student_parser | Loading student profile from sample_input/student.json
+2026-06-12 00:22:14,584 | INFO     | src.pipelines.shortlist_pipeline | Parsed profile for 'Alex Kim' — 13 topics
+2026-06-12 00:22:14,584 | INFO     | src.retrievers.openalex_retriever | OpenAlex: searching topic 'large language models'
+2026-06-12 00:22:17,090 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=title.search:large%20language%20models&sort=cited_by_count:desc&per-page=25&select=id,title,authorships,publication_year "HTTP/1.1 200 OK"
+2026-06-12 00:22:20,126 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5008809634 "HTTP/1.1 200 OK"
+2026-06-12 00:22:20,128 | INFO     | src.retrievers.openalex_retriever | Parsed author: Enkelejda Kasneci | Institution: Technical University of Munich | Country: DE
+2026-06-12 00:22:20,973 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5013346660 "HTTP/1.1 200 OK"
+2026-06-12 00:22:20,975 | INFO     | src.retrievers.openalex_retriever | Parsed author: Kathrin Seßler | Institution: Technical University of Munich | Country: DE
+2026-06-12 00:22:24,271 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5050063899 "HTTP/1.1 200 OK"
+2026-06-12 00:22:24,273 | INFO     | src.retrievers.openalex_retriever | Parsed author: Stefan Küchemann | Institution: LMU Klinikum | Country: DE
+2026-06-12 00:22:25,570 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5052257833 "HTTP/1.1 200 OK"
+2026-06-12 00:22:25,573 | INFO     | src.retrievers.openalex_retriever | Parsed author: Maria Bannert | Institution: Technical University of Munich | Country: DE
+2026-06-12 00:22:26,218 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5043273387 "HTTP/1.1 200 OK"
+2026-06-12 00:22:26,220 | INFO     | src.retrievers.openalex_retriever | Parsed author: Daryna Dementieva | Institution: Skolkovo Institute of Science and Technology | Country: RU
+2026-06-12 00:22:26,220 | INFO     | src.retrievers.openalex_retriever | OpenAlex: topic 'large language models' → 5 authors
+2026-06-12 00:22:26,220 | INFO     | src.retrievers.openalex_retriever | OpenAlex: searching topic 'retrieval augmented generation'
+2026-06-12 00:22:27,743 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=title.search:retrieval%20augmented%20generation&sort=cited_by_count:desc&per-page=25&select=id,title,authorships,publication_year "HTTP/1.1 200 OK"
+2026-06-12 00:22:31,259 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5102001778 "HTTP/1.1 200 OK"
+2026-06-12 00:22:31,260 | INFO     | src.retrievers.openalex_retriever | Parsed author: Yunfan Gao | Institution: Tongji University | Country: CN
+2026-06-12 00:22:33,056 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5001877137 "HTTP/1.1 200 OK"
+2026-06-12 00:22:33,341 | INFO     | src.retrievers.openalex_retriever | Parsed author: Yun Xiong | Institution: BGI Group (China) | Country: CN
+2026-06-12 00:22:35,592 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5101581913 "HTTP/1.1 200 OK"
+2026-06-12 00:22:35,826 | INFO     | src.retrievers.openalex_retriever | Parsed author: Xinyu Gao | Institution: Wenzhou University | Country: CN
+2026-06-12 00:22:37,176 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5109666673 "HTTP/1.1 200 OK"
+2026-06-12 00:22:37,177 | INFO     | src.retrievers.openalex_retriever | Parsed author: Kangxiang Jia | Institution: Fudan University | Country: CN
+2026-06-12 00:22:37,744 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5104217086 "HTTP/1.1 200 OK"
+2026-06-12 00:22:37,745 | INFO     | src.retrievers.openalex_retriever | Parsed author: Jinliu Pan | Institution: Unknown Institution | Country: N/A
+2026-06-12 00:22:37,745 | INFO     | src.retrievers.openalex_retriever | OpenAlex: topic 'retrieval augmented generation' → 5 authors
+2026-06-12 00:22:37,745 | INFO     | src.retrievers.openalex_retriever | OpenAlex: searching topic 'natural language processing'
+2026-06-12 00:22:39,277 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=title.search:natural%20language%20processing&sort=cited_by_count:desc&per-page=25&select=id,title,authorships,publication_year "HTTP/1.1 200 OK"
+2026-06-12 00:22:40,373 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5046006076 "HTTP/1.1 200 OK"
+2026-06-12 00:22:40,375 | INFO     | src.retrievers.openalex_retriever | Parsed author: Christopher D. Manning | Institution: Stanford University | Country: US
+2026-06-12 00:22:41,100 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5071144367 "HTTP/1.1 200 OK"
+2026-06-12 00:22:41,101 | INFO     | src.retrievers.openalex_retriever | Parsed author: Hinrich Schütze | Institution: University of Stuttgart | Country: DE
+2026-06-12 00:22:43,546 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5078865608 "HTTP/1.1 200 OK"
+2026-06-12 00:22:43,658 | INFO     | src.retrievers.openalex_retriever | Parsed author: Thomas Wolf | Institution: Central European University | Country: AT
+2026-06-12 00:22:44,265 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5069696966 "HTTP/1.1 200 OK"
+2026-06-12 00:22:44,267 | INFO     | src.retrievers.openalex_retriever | Parsed author: Lysandre Debut | Institution: FACE Foundation | Country: US
+2026-06-12 00:22:44,864 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/authors/A5049805631 "HTTP/1.1 200 OK"
+2026-06-12 00:22:44,865 | INFO     | src.retrievers.openalex_retriever | Parsed author: Victor Sanh | Institution: Institut national de recherche en informatique et en automatique | Country: FR
+2026-06-12 00:22:44,866 | INFO     | src.retrievers.openalex_retriever | OpenAlex: topic 'natural language processing' → 5 authors
+2026-06-12 00:22:44,866 | INFO     | src.retrievers.openalex_retriever | OpenAlex: 15 unique authors across 3 topics
+2026-06-12 00:22:44,866 | INFO     | src.pipelines.shortlist_pipeline | Retrieved 15 candidates from OpenAlex
+2026-06-12 00:22:47,041 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Enkelejda+Kasneci+Technical+University+of+Munich+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:22:47,205 | INFO     | src.validators.pi_validator | Accepted: Enkelejda Kasneci — Method: openalex_fallback — Reason: h_index=45, works=369, citations=12177, institution=Technical University of Munich
+2026-06-12 00:22:49,064 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Kathrin+Se%C3%9Fler+Technical+University+of+Munich+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:22:49,132 | INFO     | src.validators.pi_validator | Accepted: Kathrin Seßler — Method: openalex_fallback — Reason: h_index=10, works=16, citations=6608, institution=Technical University of Munich
+2026-06-12 00:22:50,945 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Stefan+K%C3%BCchemann+LMU+Klinikum+professor+Physics&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:22:51,090 | INFO     | src.validators.pi_validator | Accepted: Stefan Küchemann — Method: openalex_fallback — Reason: h_index=25, works=144, citations=7640, institution=LMU Klinikum
+2026-06-12 00:22:52,805 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Maria+Bannert+Technical+University+of+Munich+professor+Psychology&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:22:52,890 | INFO     | src.validators.pi_validator | Accepted: Maria Bannert — Method: openalex_fallback — Reason: h_index=40, works=138, citations=11090, institution=Technical University of Munich
+2026-06-12 00:22:54,858 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Daryna+Dementieva+Skolkovo+Institute+of+Science+and+Technology+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:22:55,043 | INFO     | src.validators.pi_validator | Accepted: Daryna Dementieva — Method: openalex_fallback — Reason: h_index=9, works=61, citations=5643, institution=Skolkovo Institute of Science and Technology
+2026-06-12 00:22:56,793 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Yunfan+Gao+Tongji+University+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:22:56,889 | INFO     | src.validators.pi_validator | Accepted: Yunfan Gao — Method: openalex_fallback — Reason: h_index=6, works=16, citations=775, institution=Tongji University
+2026-06-12 00:22:58,936 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Yun+Xiong+BGI+Group+%28China%29+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:22:58,983 | INFO     | src.validators.pi_validator | Accepted: Yun Xiong — Method: openalex_fallback — Reason: h_index=29, works=210, citations=3294, institution=BGI Group (China)
+2026-06-12 00:23:00,771 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Xinyu+Gao+Wenzhou+University+professor+Chemistry&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:23:00,817 | INFO     | src.validators.pi_validator | Accepted: Xinyu Gao — Method: openalex_fallback — Reason: h_index=16, works=56, citations=1569, institution=Wenzhou University
+2026-06-12 00:23:02,671 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Kangxiang+Jia+Fudan+University+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:23:03,922 | INFO     | src.validators.pi_validator | Accepted: Kangxiang Jia — Method: openalex_fallback — Reason: h_index=1, works=4, citations=646, institution=Fudan University
+2026-06-12 00:23:05,610 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Jinliu+Pan+Unknown+Institution+professor+Modular+design&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:23:05,693 | INFO     | src.validators.pi_validator | Rejected: Jinliu Pan (Unknown Institution) — Reason: unable to verify faculty position
+2026-06-12 00:23:07,445 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Christopher+D.+Manning+Stanford+University+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:23:07,787 | INFO     | src.validators.pi_validator | Accepted: Christopher D. Manning — Method: openalex_fallback — Reason: h_index=132, works=791, citations=165881, institution=Stanford University
+2026-06-12 00:23:09,494 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Hinrich+Sch%C3%BCtze+University+of+Stuttgart+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:23:09,617 | INFO     | src.validators.pi_validator | Accepted: Hinrich Schütze — Method: openalex_fallback — Reason: h_index=57, works=606, citations=35162, institution=University of Stuttgart
+2026-06-12 00:23:13,081 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Thomas+Wolf+Central+European+University+professor+Chemistry&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:23:14,234 | INFO     | src.validators.pi_validator | Accepted: Thomas Wolf — Method: openalex_fallback — Reason: h_index=40, works=363, citations=16842, institution=Central European University
+2026-06-12 00:23:18,931 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Lysandre+Debut+FACE+Foundation+professor+Transformer&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:23:19,358 | INFO     | src.validators.pi_validator | Accepted: Lysandre Debut — Method: openalex_fallback — Reason: h_index=5, works=23, citations=17210, institution=FACE Foundation
+2026-06-12 00:23:21,070 | INFO     | httpx | HTTP Request: GET https://www.google.com/search?q=Victor+Sanh+Institut+national+de+recherche+en+informatique+et+en+automatique+professor+Computer+science&num=5 "HTTP/1.1 200 OK"
+2026-06-12 00:23:21,311 | INFO     | src.validators.pi_validator | Accepted: Victor Sanh — Method: openalex_fallback — Reason: h_index=20, works=54, citations=19351, institution=Institut national de recherche en informatique et en automatique
+2026-06-12 00:23:21,312 | INFO     | src.pipelines.shortlist_pipeline | PI rejected: 1
+2026-06-12 00:23:21,312 | INFO     | src.services.evidence_collector | Collecting evidence for Enkelejda Kasneci
+2026-06-12 00:23:22,457 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5008809634&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:23:22,458 | INFO     | src.services.evidence_collector | Found 5 publications for Enkelejda Kasneci
+2026-06-12 00:23:22,459 | INFO     | src.services.evidence_collector | Evidence for Enkelejda Kasneci: total_citations=6163, recent=3, latest_year=2023, concepts=39
+2026-06-12 00:23:22,459 | INFO     | src.services.evidence_collector | Collecting evidence for Kathrin Seßler
+2026-06-12 00:23:23,226 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5013346660&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:23:23,228 | INFO     | src.services.evidence_collector | Found 5 publications for Kathrin Seßler
+2026-06-12 00:23:23,229 | INFO     | src.services.evidence_collector | Evidence for Kathrin Seßler: total_citations=6468, recent=5, latest_year=2025, concepts=35
+2026-06-12 00:23:23,229 | INFO     | src.services.evidence_collector | Collecting evidence for Stefan Küchemann
+2026-06-12 00:23:24,244 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5050063899&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:23:24,246 | INFO     | src.services.evidence_collector | Found 5 publications for Stefan Küchemann
+2026-06-12 00:23:24,246 | INFO     | src.services.evidence_collector | Evidence for Stefan Küchemann: total_citations=6107, recent=3, latest_year=2023, concepts=60
+2026-06-12 00:23:24,247 | INFO     | src.services.evidence_collector | Collecting evidence for Maria Bannert
+2026-06-12 00:23:24,840 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5052257833&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:23:24,983 | INFO     | src.services.evidence_collector | Found 5 publications for Maria Bannert
+2026-06-12 00:23:24,984 | INFO     | src.services.evidence_collector | Evidence for Maria Bannert: total_citations=6973, recent=2, latest_year=2023, concepts=48
+2026-06-12 00:23:24,984 | INFO     | src.services.evidence_collector | Collecting evidence for Daryna Dementieva
+2026-06-12 00:23:25,648 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5043273387&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:23:26,154 | INFO     | src.services.evidence_collector | Found 5 publications for Daryna Dementieva
+2026-06-12 00:23:26,155 | INFO     | src.services.evidence_collector | Evidence for Daryna Dementieva: total_citations=5546, recent=5, latest_year=2023, concepts=54
+2026-06-12 00:23:26,156 | INFO     | src.services.evidence_collector | Collecting evidence for Yunfan Gao
+2026-06-12 00:23:27,284 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5102001778&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:23:27,286 | INFO     | src.services.evidence_collector | Found 5 publications for Yunfan Gao
+2026-06-12 00:23:27,287 | INFO     | src.services.evidence_collector | Evidence for Yunfan Gao: total_citations=753, recent=5, latest_year=2024, concepts=48
+2026-06-12 00:23:27,287 | INFO     | src.services.evidence_collector | Collecting evidence for Yun Xiong
+2026-06-12 00:23:28,100 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5001877137&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:23:28,114 | INFO     | src.services.evidence_collector | Found 5 publications for Yun Xiong
+2026-06-12 00:23:28,114 | INFO     | src.services.evidence_collector | Evidence for Yun Xiong: total_citations=1300, recent=2, latest_year=2023, concepts=49
+2026-06-12 00:23:28,114 | INFO     | src.services.evidence_collector | Collecting evidence for Xinyu Gao
+2026-06-12 00:23:29,117 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5101581913&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:23:29,164 | INFO     | src.services.evidence_collector | Found 5 publications for Xinyu Gao
+2026-06-12 00:23:29,165 | INFO     | src.services.evidence_collector | Evidence for Xinyu Gao: total_citations=1109, recent=5, latest_year=2025, concepts=39
+2026-06-12 00:23:29,165 | INFO     | src.services.evidence_collector | Collecting evidence for Kangxiang Jia
+2026-06-12 00:23:29,664 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5109666673&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:23:29,860 | INFO     | src.services.evidence_collector | Found 4 publications for Kangxiang Jia
+2026-06-12 00:23:29,861 | INFO     | src.services.evidence_collector | Evidence for Kangxiang Jia: total_citations=647, recent=4, latest_year=2026, concepts=46
+2026-06-12 00:23:29,861 | INFO     | src.services.evidence_collector | Collecting evidence for Christopher D. Manning
+2026-06-12 00:23:30,440 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5046006076&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:23:30,584 | INFO     | src.services.evidence_collector | Found 5 publications for Christopher D. Manning
+2026-06-12 00:23:30,585 | INFO     | src.services.evidence_collector | Evidence for Christopher D. Manning: total_citations=70389, recent=0, latest_year=2015, concepts=36
+2026-06-12 00:23:30,586 | INFO     | src.services.evidence_collector | Collecting evidence for Hinrich Schütze
+2026-06-12 00:23:31,358 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5071144367&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:23:31,428 | INFO     | src.services.evidence_collector | Found 5 publications for Hinrich Schütze
+2026-06-12 00:23:31,428 | INFO     | src.services.evidence_collector | Evidence for Hinrich Schütze: total_citations=23958, recent=0, latest_year=2017, concepts=58
+2026-06-12 00:23:31,429 | INFO     | src.services.evidence_collector | Collecting evidence for Thomas Wolf
+2026-06-12 00:23:31,968 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5078865608&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:23:32,139 | INFO     | src.services.evidence_collector | Found 5 publications for Thomas Wolf
+2026-06-12 00:23:32,140 | INFO     | src.services.evidence_collector | Evidence for Thomas Wolf: total_citations=11850, recent=0, latest_year=2020, concepts=58
+2026-06-12 00:23:32,140 | INFO     | src.services.evidence_collector | Collecting evidence for Lysandre Debut
+2026-06-12 00:23:32,720 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5069696966&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:23:32,903 | INFO     | src.services.evidence_collector | Found 5 publications for Lysandre Debut
+2026-06-12 00:23:32,904 | INFO     | src.services.evidence_collector | Evidence for Lysandre Debut: total_citations=17211, recent=1, latest_year=2021, concepts=33
+2026-06-12 00:23:32,904 | INFO     | src.services.evidence_collector | Collecting evidence for Victor Sanh
+2026-06-12 00:23:33,571 | INFO     | httpx | HTTP Request: GET https://api.openalex.org/works?filter=authorships.author.id:A5049805631&sort=cited_by_count:desc&per-page=5&select=id,title,publication_year,cited_by_count,primary_location,doi,concepts "HTTP/1.1 200 OK"
+2026-06-12 00:23:33,660 | INFO     | src.services.evidence_collector | Found 5 publications for Victor Sanh
+2026-06-12 00:23:33,661 | INFO     | src.services.evidence_collector | Evidence for Victor Sanh: total_citations=17449, recent=1, latest_year=2021, concepts=52
+2026-06-12 00:23:33,662 | INFO     | src.validators.country_validator | Rejected: Enkelejda Kasneci (Technical University of Munich) — DE not in target countries [CA, GB, US]
+2026-06-12 00:23:33,662 | INFO     | src.validators.country_validator | Rejected: Kathrin Seßler (Technical University of Munich) — DE not in target countries [CA, GB, US]
+2026-06-12 00:23:33,662 | INFO     | src.validators.country_validator | Rejected: Stefan Küchemann (LMU Klinikum) — DE not in target countries [CA, GB, US]
+2026-06-12 00:23:33,662 | INFO     | src.validators.country_validator | Rejected: Maria Bannert (Technical University of Munich) — DE not in target countries [CA, GB, US]
+2026-06-12 00:23:33,662 | INFO     | src.validators.country_validator | Rejected: Daryna Dementieva (Skolkovo Institute of Science and Technology) — RU not in target countries [CA, GB, US]
+2026-06-12 00:23:33,662 | INFO     | src.validators.country_validator | Rejected: Yunfan Gao (Tongji University) — CN not in target countries [CA, GB, US]
+2026-06-12 00:23:33,662 | INFO     | src.validators.country_validator | Rejected: Yun Xiong (BGI Group (China)) — CN not in target countries [CA, GB, US]
+2026-06-12 00:23:33,662 | INFO     | src.validators.country_validator | Rejected: Xinyu Gao (Wenzhou University) — CN not in target countries [CA, GB, US]
+2026-06-12 00:23:33,662 | INFO     | src.validators.country_validator | Rejected: Kangxiang Jia (Fudan University) — CN not in target countries [CA, GB, US]
+2026-06-12 00:23:33,663 | INFO     | src.validators.country_validator | Rejected: Hinrich Schütze (University of Stuttgart) — DE not in target countries [CA, GB, US]
+2026-06-12 00:23:33,663 | INFO     | src.validators.country_validator | Rejected: Thomas Wolf (Central European University) — AT not in target countries [CA, GB, US]
+2026-06-12 00:23:33,663 | INFO     | src.validators.country_validator | Rejected: Victor Sanh (Institut national de recherche en informatique et en automatique) — FR not in target countries [CA, GB, US]
+2026-06-12 00:23:33,663 | INFO     | src.pipelines.shortlist_pipeline | Country rejected: 12
+2026-06-12 00:23:33,663 | INFO     | src.pipelines.shortlist_pipeline | Domain rejected: 0
+2026-06-12 00:23:33,664 | INFO     | src.pipelines.shortlist_pipeline | Evidence rejected: 0
+2026-06-12 00:23:33,664 | INFO     | src.pipelines.shortlist_pipeline | Validation summary — retrieved: 15 | PI: 14 | country: 2 | domain: 2 | evidence: 2
+2026-06-12 00:23:33,664 | INFO     | src.pipelines.shortlist_pipeline | Rejections — PI: 1 | country: 12 | domain: 0 | evidence: 0
+2026-06-12 00:23:33,664 | INFO     | src.scorers.recommendation_scorer | Scored Christopher D. Manning = 0.5039
+2026-06-12 00:23:33,664 | INFO     | src.scorers.recommendation_scorer | Scored Lysandre Debut = 0.5139
+2026-06-12 00:23:33,664 | INFO     | src.scorers.recommendation_scorer | Top recommendation: Lysandre Debut (0.5139)
+2026-06-12 00:23:33,666 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-06-12 00:23:33,919 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-06-12 00:23:33,925 | WARNING  | src.generators.why_match_generator | LLM call failed for Lysandre Debut (429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 26.05517928s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '26s'}]}}) — using fallback
+2026-06-12 00:23:33,925 | INFO     | src.generators.why_match_generator | Fallback why_match used for Lysandre Debut
+2026-06-12 00:23:33,926 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-06-12 00:23:34,195 | INFO     | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-06-12 00:23:34,196 | WARNING  | src.generators.why_match_generator | LLM call failed for Christopher D. Manning (429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 25.755404422s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '25s'}]}}) — using fallback
+2026-06-12 00:23:34,197 | INFO     | src.generators.why_match_generator | Fallback why_match used for Christopher D. Manning

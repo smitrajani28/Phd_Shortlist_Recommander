@@ -39,6 +39,11 @@ class Settings(BaseSettings):
     request_timeout: int = Field(default=10)
     max_retries: int = Field(default=3)
 
+    # Retrieval depth
+    openalex_per_topic: int = Field(default=50, ge=1, le=200, description="Works to fetch per topic from /works")
+    openalex_authors_per_topic: int = Field(default=20, ge=1, le=100, description="Max unique authors to fetch per topic")
+    openalex_max_topics: int = Field(default=8, ge=1, le=20, description="Max topics (base + expanded) to query")
+
     # PI validation
     pi_min_confidence: float = Field(default=0.6, ge=0.0, le=1.0)
     pi_use_network: bool = Field(default=True, description="Set False to disable HTTP calls in PIValidator")

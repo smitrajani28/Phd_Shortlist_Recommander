@@ -33,6 +33,8 @@ class ValidationStageMetrics(BaseModel):
     domain_validated_count: int = 0
     evidence_validated_count: int = 0
     recommendation_count: int = 0
+    emails_found_count: int = 0
+    program_links_found_count: int = 0
 
     @property
     def pi_rejection_rate(self) -> float:
@@ -141,6 +143,8 @@ class ReportExporter:
             f"| Domain Validated   | {v.domain_validated_count:>5} | {v.country_validated_count - v.domain_validated_count:>8} |",
             f"| Evidence Validated | {v.evidence_validated_count:>5} | {v.domain_validated_count - v.evidence_validated_count:>8} |",
             f"| **Recommendations**| **{v.recommendation_count}** |          |",
+            f"| Emails found       | {v.emails_found_count:>5} |          |",
+            f"| Program links      | {v.program_links_found_count:>5} |          |",
             "",
             f"**Overall pass rate:** {v.overall_pass_rate:.1%}  ",
             f"**PI rejection rate:** {v.pi_rejection_rate:.1%}",

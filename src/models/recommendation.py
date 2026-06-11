@@ -21,6 +21,14 @@ class ScoreBreakdown(BaseModel):
     country_preference: float = Field(ge=0.0, le=1.0, description="10% weight")
 
 
+class LinkedProgram(BaseModel):
+    """A PhD program or open position linked to a supervisor's institution."""
+    program_name: str
+    institution: str
+    url: str
+    status: str = Field(default="unknown", description="open | unknown")
+
+
 class Recommendation(BaseModel):
     """
     A single ranked recommendation entry in the final shortlist.
@@ -34,6 +42,14 @@ class Recommendation(BaseModel):
     tier: str = Field(default="target", description="reach | target | safety")
     why_match: str = Field(default="", description="LLM-generated explanation (Stage 6)")
     program_url: Optional[str] = None
+    # Program linking (Stage 8 enrichment)
+    linked_programs: list[LinkedProgram] = Field(
+        default_factory=list,
+        description="PhD program pages linked to supervisor's institution",
+    )
+    # Contact email (Stage 8 enrichment)
+    contact_email: Optional[str] = Field(default=None, description="Extracted institutional email")
+    email_source: Optional[str] = Field(default=None, description="faculty_page | profile_url | not_found")
     # Feedback loop fields (populated when OutcomeLearner data is available)
     historical_success_score: Optional[float] = Field(
         default=None, ge=0.0, le=1.0,

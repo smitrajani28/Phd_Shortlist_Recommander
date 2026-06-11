@@ -33,6 +33,9 @@ from ..services.evidence_collector import EvidenceCollector
 from ..scorers.recommendation_scorer import RecommendationScorer
 from ..generators.why_match_generator import WhyMatchGenerator
 from ..exporters.json_exporter import JsonExporter
+from ..linkers.program_linker import ProgramLinker, LinkedProgram as LinkerLinkedProgram
+from ..extractors.email_extractor import EmailExtractor
+from ..models.recommendation import LinkedProgram
 from ..evaluation.pipeline_report import (
     PipelineReport, ValidationStageMetrics, RuntimeMetrics, ReportExporter
 )
@@ -87,6 +90,9 @@ class ShortlistPipeline:
             email=settings.openalex_email,
             timeout=settings.request_timeout,
             max_retries=settings.max_retries,
+            per_topic_works=settings.openalex_per_topic,
+            authors_per_topic=settings.openalex_authors_per_topic,
+            max_topics=settings.openalex_max_topics,
         )
         self.retrievers = [
             self.openalex,
@@ -134,6 +140,8 @@ class ShortlistPipeline:
         )
         self.exporter = JsonExporter(output_dir=Path("sample_output"))
         self.report_exporter = ReportExporter(output_dir=Path("sample_output"))
+        self.program_linker = ProgramLinker()
+        self.email_extractor = EmailExtractor()
 
     # ------------------------------------------------------------------ #
     # Optional: outcome learning                                          #
@@ -213,6 +221,7 @@ class ShortlistPipeline:
         counts.log_summary()
         ranked = self._score_and_rank(validated, profile)
         shortlist = self._generate_why_match(ranked, profile)
+        shortlist = self._enrich_recommendations(shortlist)
         output = self._build_output(profile, counts.retrieved, shortlist)
         written = self._export(output, output_path)
         logger.info(
@@ -257,8 +266,9 @@ class ShortlistPipeline:
         shortlist = self._generate_why_match(ranked, profile)
         why_match_s = time.perf_counter() - t0
 
-        # Stage 8: build + export
+        # Stage 8: enrichment (program linking + email extraction) + build + export
         t0 = time.perf_counter()
+        shortlist = self._enrich_recommendations(shortlist)
         output = self._build_output(profile, counts.retrieved, shortlist)
         written = self._export(output, output_path)
         export_s = time.perf_counter() - t0
@@ -282,6 +292,8 @@ class ShortlistPipeline:
                 domain_validated_count=counts.domain_passed,
                 evidence_validated_count=counts.evidence_passed,
                 recommendation_count=len(shortlist),
+                emails_found_count=sum(1 for r in shortlist if r.contact_email),
+                program_links_found_count=sum(len(r.linked_programs) for r in shortlist),
             ),
             runtime=RuntimeMetrics(
                 retrieval_seconds=round(retrieval_s, 3),
@@ -387,6 +399,47 @@ class ShortlistPipeline:
     ) -> list[Recommendation]:
         """Stage 6 — Score, sort, and tier-assign all validated supervisors."""
         return self.scorer.score_all(supervisors, profile)
+
+    def _enrich_recommendations(
+        self, recommendations: list[Recommendation]
+    ) -> list[Recommendation]:
+        """
+        Stage 8 enrichment — program linking + email extraction.
+        Best-effort: failures are caught per-recommendation so one bad
+        HTTP call never aborts the entire batch.
+        """
+        for rec in recommendations:
+            try:
+                linker_results = self.program_linker.link(rec.supervisor)
+                rec.linked_programs = [
+                    LinkedProgram(
+                        program_name=lp.program_name,
+                        institution=lp.institution,
+                        url=lp.url,
+                        status=lp.status,
+                    )
+                    for lp in linker_results
+                ]
+            except Exception as exc:
+                logger.warning("ProgramLinker failed for %s: %s", rec.supervisor.name, exc)
+
+            try:
+                email_result = self.email_extractor.extract(rec.supervisor)
+                if email_result.email:
+                    rec.contact_email = email_result.email
+                    rec.email_source = email_result.source
+                    # Also write back to supervisor for downstream use
+                    rec.supervisor.email = email_result.email
+            except Exception as exc:
+                logger.warning("EmailExtractor failed for %s: %s", rec.supervisor.name, exc)
+
+        emails = sum(1 for r in recommendations if r.contact_email)
+        links = sum(len(r.linked_programs) for r in recommendations)
+        logger.info(
+            "Enrichment complete — emails: %d/%d | program links: %d",
+            emails, len(recommendations), links,
+        )
+        return recommendations
 
     def _generate_why_match(
         self,
