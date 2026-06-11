@@ -39,6 +39,9 @@ class Settings(BaseSettings):
     # PI validation
     pi_min_confidence: float = Field(default=0.6, ge=0.0, le=1.0)
     pi_use_network: bool = Field(default=True, description="Set False to disable HTTP calls in PIValidator")
+    pi_fallback_min_h_index: int = Field(default=10, ge=0, description="Min h-index for OpenAlex fallback acceptance")
+    pi_fallback_min_works: int = Field(default=20, ge=0, description="Min works_count for OpenAlex fallback acceptance")
+    pi_fallback_min_citations: int = Field(default=200, ge=0, description="Min cited_by_count for OpenAlex fallback acceptance")
 
     # Evidence collection
     evidence_max_works: int = Field(default=10, ge=1, le=50, description="Max publications to fetch per supervisor")

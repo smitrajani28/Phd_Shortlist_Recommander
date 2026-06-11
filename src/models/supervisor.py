@@ -46,6 +46,7 @@ class PIMetadata(BaseModel):
 
     pi_verified: bool = False
     verification_source: str = ""
+    verification_method: str = ""   # "faculty_page" | "openalex_fallback" | "title_hint"
     job_title: str = ""
     confidence: float = Field(default=0.0, ge=0.0, le=1.0)
     rejection_reason: Optional[str] = None
@@ -76,6 +77,8 @@ class Supervisor(BaseModel):
 
     # Bibliometrics (from retriever author record)
     h_index: Optional[int] = None
+    works_count: Optional[int] = None
+    cited_by_count: Optional[int] = None
 
     # External IDs
     openalex_id: Optional[str] = None

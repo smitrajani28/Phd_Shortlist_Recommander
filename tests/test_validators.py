@@ -21,13 +21,19 @@ from src.validators.faculty_profile_resolver import (
 # Helpers                                                              #
 # ------------------------------------------------------------------ #
 
-def _make_supervisor(name: str = "Test User", job_title: str | None = None) -> Supervisor:
+def _make_supervisor(name: str = "Test User", job_title: str | None = None,
+                     h_index: int | None = None, works_count: int | None = None,
+                     cited_by_count: int | None = None,
+                     institution: str = "Test University") -> Supervisor:
     return Supervisor(
         name=name,
-        institution="Test University",
+        institution=institution,
         country="US",
         job_title=job_title,
         research_areas=["machine learning"],
+        h_index=h_index,
+        works_count=works_count,
+        cited_by_count=cited_by_count,
     )
 
 
@@ -280,3 +286,92 @@ class TestEvidenceValidator:
         ]
         EvidenceValidator(min_recent_publications=2)
         pytest.skip("EvidenceValidator.validate not yet implemented via legacy fixture")
+
+
+# ------------------------------------------------------------------ #
+# OpenAlex bibliometric fallback                                       #
+# ------------------------------------------------------------------ #
+
+def _fallback_validator(**kwargs) -> PIValidator:
+    """Network-enabled validator with mock resolver that always fails, plus custom thresholds."""
+    resolver = MagicMock(spec=FacultyProfileResolver)
+    resolver.resolve.return_value = ResolverResult(title="", confidence=0.0, source="google_snippet")
+    return PIValidator(
+        resolver=resolver,
+        use_network=True,
+        min_confidence=0.6,
+        fallback_min_h_index=kwargs.get("fallback_min_h_index", 10),
+        fallback_min_works=kwargs.get("fallback_min_works", 20),
+        fallback_min_citations=kwargs.get("fallback_min_citations", 200),
+    )
+
+
+class TestOpenAlexFallback:
+    def test_high_h_index_accepted(self):
+        s = _make_supervisor(h_index=50, institution="Stanford University")
+        assert _fallback_validator().validate(s) is True
+
+    def test_high_h_index_sets_openalex_fallback_method(self):
+        s = _make_supervisor(h_index=50, institution="Stanford University")
+        _fallback_validator().validate(s)
+        assert s.pi_metadata.verification_method == "openalex_fallback"
+        assert s.pi_metadata.pi_verified is True
+        assert s.pi_metadata.confidence == 0.75
+
+    def test_high_works_count_accepted(self):
+        s = _make_supervisor(works_count=100, institution="MIT")
+        assert _fallback_validator().validate(s) is True
+
+    def test_high_works_count_confidence_tier(self):
+        s = _make_supervisor(works_count=100, institution="MIT")
+        _fallback_validator().validate(s)
+        assert s.pi_metadata.confidence == 0.70
+
+    def test_high_citations_accepted(self):
+        s = _make_supervisor(cited_by_count=5000, institution="INRIA")
+        assert _fallback_validator().validate(s) is True
+
+    def test_high_citations_confidence_tier(self):
+        s = _make_supervisor(cited_by_count=5000, institution="INRIA")
+        _fallback_validator().validate(s)
+        assert s.pi_metadata.confidence == 0.65
+
+    def test_unknown_institution_rejected_even_with_high_h_index(self):
+        s = _make_supervisor(h_index=50, institution="Unknown Institution")
+        assert _fallback_validator().validate(s) is False
+
+    def test_missing_institution_rejected(self):
+        s = _make_supervisor(h_index=50, institution="")
+        assert _fallback_validator().validate(s) is False
+
+    def test_low_metrics_rejected(self):
+        s = _make_supervisor(h_index=2, works_count=5, cited_by_count=10, institution="Some University")
+        assert _fallback_validator().validate(s) is False
+
+    def test_ineligible_title_skips_fallback(self):
+        """A postdoc with high h_index should still be rejected — ineligible title wins."""
+        resolver = MagicMock(spec=FacultyProfileResolver)
+        resolver.resolve.return_value = ResolverResult(
+            title="postdoctoral researcher", confidence=0.9, source="faculty_page_scrape"
+        )
+        validator = PIValidator(resolver=resolver, use_network=True,
+                                fallback_min_h_index=10, fallback_min_works=20, fallback_min_citations=200)
+        s = _make_supervisor(h_index=50, institution="Stanford University")
+        assert validator.validate(s) is False
+
+    def test_verification_method_stored_on_rejection(self):
+        s = _make_supervisor(h_index=2, works_count=5, cited_by_count=10, institution="Some University")
+        _fallback_validator().validate(s)
+        assert s.pi_metadata.verification_method == "none"
+        assert s.pi_metadata.pi_verified is False
+
+    def test_faculty_page_acceptance_sets_faculty_page_method(self):
+        resolver = MagicMock(spec=FacultyProfileResolver)
+        resolver.resolve.return_value = ResolverResult(
+            title="assistant professor", confidence=0.95, source="faculty_page_scrape"
+        )
+        validator = PIValidator(resolver=resolver, use_network=True,
+                                fallback_min_h_index=10, fallback_min_works=20, fallback_min_citations=200)
+        s = _make_supervisor(institution="MIT")
+        assert validator.validate(s) is True
+        assert s.pi_metadata.verification_method == "faculty_page"

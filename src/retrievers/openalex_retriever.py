@@ -163,6 +163,8 @@ class OpenAlexRetriever(BaseRetriever):
             research_areas=research_areas[:10],
             recent_publications=recent_publications,
             h_index=raw.get("summary_stats", {}).get("h_index"),
+            works_count=raw.get("works_count"),
+            cited_by_count=raw.get("cited_by_count"),
             openalex_id=raw.get("id", "").split("/")[-1],
         )
 

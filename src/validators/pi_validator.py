@@ -8,6 +8,7 @@ When confidence is below threshold, the supervisor is rejected.
 
 from ..models.supervisor import Supervisor, PIMetadata
 from ..utils.logger import get_logger
+from ..utils.config import get_settings
 from .base_validator import BaseValidator
 from .faculty_profile_resolver import (
     FacultyProfileResolver,
@@ -21,20 +22,20 @@ logger = get_logger(__name__)
 
 class PIValidator(BaseValidator):
     """
-    Two-stage PI check:
+    Three-stage PI check:
 
     Stage A — Fast title check (no network):
-        If supervisor.job_title is already populated (e.g. from OpenAlex),
-        match it against the eligible/ineligible lists immediately.
+        If supervisor.job_title is already populated, match against
+        eligible/ineligible lists immediately.
 
     Stage B — Network resolution (FacultyProfileResolver):
-        If no title is present, or Stage A is inconclusive,
-        query Google + institution page to resolve the title.
-        Reject if confidence < min_confidence (conservative default).
+        Query Google + institution page to resolve the title.
 
-    The resulting PIMetadata is attached to supervisor.pi_metadata
-    regardless of whether the supervisor passes or fails, so downstream
-    stages can explain rejections without re-querying.
+    Stage C — OpenAlex fallback (no network):
+        If stages A/B fail, accept high-impact researchers whose
+        h_index / works_count / cited_by_count exceed configured thresholds,
+        provided they have a known institution and research areas.
+        Rejects are still rejected if the title is clearly ineligible.
     """
 
     def __init__(
@@ -42,37 +43,27 @@ class PIValidator(BaseValidator):
         resolver: FacultyProfileResolver | None = None,
         min_confidence: float = 0.6,
         use_network: bool = True,
+        fallback_min_h_index: int | None = None,
+        fallback_min_works: int | None = None,
+        fallback_min_citations: int | None = None,
     ) -> None:
-        """
-        Args:
-            resolver: Injected FacultyProfileResolver (created if None).
-            min_confidence: Minimum resolver confidence to accept a supervisor.
-            use_network: Set False in tests to skip HTTP calls.
-        """
+        settings = get_settings()
         self.resolver = resolver or FacultyProfileResolver(min_confidence=min_confidence)
         self.min_confidence = min_confidence
         self.use_network = use_network
+        self.fallback_min_h_index = fallback_min_h_index if fallback_min_h_index is not None else settings.pi_fallback_min_h_index
+        self.fallback_min_works = fallback_min_works if fallback_min_works is not None else settings.pi_fallback_min_works
+        self.fallback_min_citations = fallback_min_citations if fallback_min_citations is not None else settings.pi_fallback_min_citations
 
     def validate(self, supervisor: Supervisor) -> bool:
-        """
-        Return True if the supervisor is a verified PI; False otherwise.
-
-        Attaches PIMetadata to supervisor.pi_metadata as a side-effect.
-        Logs the rejection reason when returning False.
-
-        Args:
-            supervisor: Supervisor to validate.
-
-        Returns:
-            True if PI-eligible with sufficient confidence.
-        """
-        # Stage A: fast title check from existing data
+        # Stage A: fast title check
         if supervisor.job_title:
             metadata = self._check_title(supervisor.job_title, source="openalex_hint")
+            metadata.verification_method = "title_hint"
             supervisor.pi_metadata = metadata
             if metadata.pi_verified:
+                logger.info("Accepted: %s — Method: title_hint", supervisor.name)
                 return True
-            # Title is known — ineligible or unrecognised, no need to go further
             self._log_rejection(supervisor, metadata.rejection_reason or "ineligible title")
             return False
 
@@ -85,19 +76,38 @@ class PIValidator(BaseValidator):
                 research_area=area,
             )
             metadata = self._result_to_metadata(result)
-            supervisor.pi_metadata = metadata
+            metadata.verification_method = "faculty_page"
+
+            # If network found a clearly ineligible title — reject immediately, skip fallback
+            if not metadata.pi_verified and result.title and _is_clearly_ineligible(result.title.lower()):
+                supervisor.pi_metadata = metadata
+                self._log_rejection(supervisor, metadata.rejection_reason or "ineligible title")
+                return False
 
             if metadata.pi_verified:
+                supervisor.pi_metadata = metadata
+                logger.info("Accepted: %s — Method: faculty_page", supervisor.name)
                 return True
 
-            reason = metadata.rejection_reason or "unable to verify faculty position"
-            self._log_rejection(supervisor, reason)
-            return False
+        # Stage C: OpenAlex bibliometric fallback
+        fallback = self._openalex_fallback(supervisor)
+        if fallback is not None:
+            supervisor.pi_metadata = fallback
+            logger.info(
+                "Accepted: %s — Method: openalex_fallback — Reason: h_index=%s, works=%s, citations=%s, institution=%s",
+                supervisor.name,
+                supervisor.h_index,
+                supervisor.works_count,
+                supervisor.cited_by_count,
+                supervisor.institution,
+            )
+            return True
 
-        # No title, network disabled → reject conservatively
+        # All stages failed
         metadata = PIMetadata(
             pi_verified=False,
-            rejection_reason="no title available and network resolution disabled",
+            verification_method="none",
+            rejection_reason="unable to verify faculty position",
             confidence=0.0,
         )
         supervisor.pi_metadata = metadata
@@ -108,12 +118,42 @@ class PIValidator(BaseValidator):
     # Helpers                                                              #
     # ------------------------------------------------------------------ #
 
-    def _check_title(self, title: str, source: str) -> PIMetadata:
+    def _openalex_fallback(self, supervisor: Supervisor) -> PIMetadata | None:
         """
-        Evaluate a known title string against eligible/ineligible lists.
+        Return accepted PIMetadata when bibliometric signals are strong enough,
+        or None if the supervisor does not meet the thresholds.
 
-        Returns a PIMetadata reflecting the verdict.
+        Confidence tiers:
+          0.75 — h_index meets threshold (strong individual signal)
+          0.70 — works_count meets threshold (prolific output)
+          0.65 — cited_by_count meets threshold + institution known
+          None  — no threshold met → caller rejects
         """
+        # Must have a known institution to pass fallback
+        if not supervisor.institution or supervisor.institution == "Unknown Institution":
+            return None
+
+        h = supervisor.h_index or 0
+        works = supervisor.works_count or 0
+        citations = supervisor.cited_by_count or 0
+
+        if h >= self.fallback_min_h_index:
+            confidence = 0.75
+        elif works >= self.fallback_min_works:
+            confidence = 0.70
+        elif citations >= self.fallback_min_citations:
+            confidence = 0.65
+        else:
+            return None
+
+        return PIMetadata(
+            pi_verified=True,
+            verification_source="openalex",
+            verification_method="openalex_fallback",
+            confidence=confidence,
+        )
+
+    def _check_title(self, title: str, source: str) -> PIMetadata:
         lower = title.lower()
 
         if _is_clearly_ineligible(lower):
@@ -127,15 +167,13 @@ class PIValidator(BaseValidator):
             )
 
         if _is_eligible(lower):
-            matched = next(s for s in _ELIGIBLE_SUBSTRINGS if s in lower)
             return PIMetadata(
                 pi_verified=True,
                 verification_source=source,
                 job_title=title,
-                confidence=0.95,  # high but not 1.0 — title strings can be stale
+                confidence=0.95,
             )
 
-        # Title present but unrecognised — treat as inconclusive
         return PIMetadata(
             pi_verified=False,
             verification_source=source,
@@ -145,7 +183,6 @@ class PIValidator(BaseValidator):
         )
 
     def _result_to_metadata(self, result: ResolverResult) -> PIMetadata:
-        """Convert a ResolverResult into PIMetadata."""
         lower_title = result.title.lower()
 
         if result.confidence < self.min_confidence:
