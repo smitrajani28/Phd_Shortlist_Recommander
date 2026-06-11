@@ -1,11 +1,11 @@
 from .student import StudentProfile, ResearchInterest, AcademicBackground
-from .supervisor import Supervisor, Publication, Grant, FundingStatus, PIMetadata
-from .recommendation import Recommendation, ShortlistOutput, ScoreBreakdown
+from .supervisor import Supervisor, Publication, PIMetadata
+from .recommendation import Recommendation, ShortlistOutput, ScoreBreakdown, LinkedProgram
 from .validation import ValidationResult
 
 __all__ = [
     "StudentProfile", "ResearchInterest", "AcademicBackground",
-    "Supervisor", "Publication", "Grant", "FundingStatus", "PIMetadata",
-    "Recommendation", "ShortlistOutput", "ScoreBreakdown",
+    "Supervisor", "Publication", "PIMetadata",
+    "Recommendation", "ShortlistOutput", "ScoreBreakdown", "LinkedProgram",
     "ValidationResult",
 ]

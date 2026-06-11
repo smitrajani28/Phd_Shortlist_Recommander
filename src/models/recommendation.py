@@ -41,7 +41,6 @@ class Recommendation(BaseModel):
     score_breakdown: ScoreBreakdown
     tier: str = Field(default="target", description="reach | target | safety")
     why_match: str = Field(default="", description="LLM-generated explanation (Stage 6)")
-    program_url: Optional[str] = None
     # Program linking (Stage 8 enrichment)
     linked_programs: list[LinkedProgram] = Field(
         default_factory=list,

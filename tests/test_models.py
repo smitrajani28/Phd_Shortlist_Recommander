@@ -3,7 +3,7 @@
 import pytest
 from pydantic import ValidationError
 from src.models.student import StudentProfile, AcademicBackground, ResearchInterest
-from src.models.supervisor import Supervisor, FundingStatus
+from src.models.supervisor import Supervisor
 from src.models.recommendation import Recommendation, ShortlistOutput, ScoreBreakdown
 
 
@@ -33,9 +33,6 @@ class TestStudentProfile:
 
 
 class TestSupervisor:
-    def test_default_funding_status_is_unknown(self, sample_supervisor):
-        assert sample_supervisor.funding_status == FundingStatus.UNKNOWN
-
     def test_supervisor_accepts_empty_publications(self):
         s = Supervisor(name="Dr. X", institution="MIT", country="US")
         assert s.recent_publications == []

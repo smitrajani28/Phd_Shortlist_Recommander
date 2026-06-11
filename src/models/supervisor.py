@@ -4,14 +4,7 @@ Data models for PhD supervisors.
 
 from pydantic import BaseModel, Field
 from typing import Optional
-from enum import Enum
 from .validation import ValidationResult
-
-
-class FundingStatus(str, Enum):
-    ACTIVE = "active"
-    INACTIVE = "inactive"
-    UNKNOWN = "unknown"
 
 
 class Publication(BaseModel):
@@ -28,14 +21,6 @@ class Publication(BaseModel):
     openalex_url: Optional[str] = None
     concepts: list[str] = Field(default_factory=list)
 
-
-class Grant(BaseModel):
-    """Represents a research grant held by a supervisor."""
-
-    title: str
-    funder: str
-    year: int
-    amount: Optional[float] = None
 
 
 class PIMetadata(BaseModel):
@@ -69,11 +54,6 @@ class Supervisor(BaseModel):
     # Research profile (from retriever; overwritten/enriched by EvidenceCollector)
     research_areas: list[str] = Field(default_factory=list)
     recent_publications: list[Publication] = Field(default_factory=list)
-    grants: list[Grant] = Field(default_factory=list)
-
-    # Funding / status
-    is_accepting_students: bool = True
-    funding_status: FundingStatus = FundingStatus.UNKNOWN
 
     # Bibliometrics (from retriever author record)
     h_index: Optional[int] = None
@@ -82,7 +62,6 @@ class Supervisor(BaseModel):
 
     # External IDs
     openalex_id: Optional[str] = None
-    semantic_scholar_id: Optional[str] = None
 
     # PI validation
     job_title: Optional[str] = None
